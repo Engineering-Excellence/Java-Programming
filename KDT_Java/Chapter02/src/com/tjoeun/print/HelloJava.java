@@ -1,4 +1,4 @@
-package com.tjoeun.hello;
+package com.tjoeun.print;
 
 public class HelloJava {
 
