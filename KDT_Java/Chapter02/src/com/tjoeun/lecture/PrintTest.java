@@ -1,4 +1,4 @@
-package com.tjoeun.print;
+package com.tjoeun.lecture;
 
 public class PrintTest {
 

@@ -1,4 +1,4 @@
-package com.tjoeun.variable;
+package com.tjoeun.lecture;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.tjoeun.print;
+package com.tjoeun.lecture;
 
 public class HelloJava {
 
@@ -18,7 +18,7 @@ public class HelloJava {
 //		코드 이동 단축키: alt + ↑(위로 이동), alt + ↓(아래로 이동)
 
 //		println: 괄호 안의 내용을 출력하고 줄을 바꾼다.
-//		print: 괄호 안의 내용을 출력하고 줄을 바꾸지 않는다.
+//		lecture: 괄호 안의 내용을 출력하고 줄을 바꾸지 않는다.
 //		printf: 출력 서식(자리수)을 지정해서 출력한다.
         System.out.println("안녕 자바");
         System.out.print("안녕 \n자바"); // \n: new line => 줄을 바꾼다.
