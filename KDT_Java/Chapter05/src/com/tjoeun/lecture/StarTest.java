@@ -10,8 +10,8 @@ public class StarTest {
 //		****
 //		*****
 
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<=i; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -24,8 +24,8 @@ public class StarTest {
 //		**
 //		*
 
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<=4-i; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= 4 - i; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -38,11 +38,11 @@ public class StarTest {
 //		 ****
 //		*****
 
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<=3-i; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= 3 - i; j++) {
                 System.out.print("_");
             }
-            for (int j=0; j<=i; j++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -55,11 +55,11 @@ public class StarTest {
 //		   **
 //		    *
 
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<=i-1; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= i - 1; j++) {
                 System.out.print("_");
             }
-            for (int j=0; j<=4-i; j++) {
+            for (int j = 0; j <= 4 - i; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -72,14 +72,14 @@ public class StarTest {
 //		**** ****
 //		*********
 
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<=i; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
-            for (int j=0; j<7-i*2; j++) {
+            for (int j = 0; j < 7 - i * 2; j++) {
                 System.out.print("_");
             }
-            for (int j=0; j<=i; j++) {
+            for (int j = 0; j <= i; j++) {
                 if (j == 4) {
                     break;
                 }
@@ -87,9 +87,7 @@ public class StarTest {
             }
             System.out.println();
         }
-
     }
-
 }
 
 
