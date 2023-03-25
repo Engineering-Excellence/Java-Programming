@@ -36,15 +36,11 @@ public class SelectionSort {
                     data[i] = data[j];
                     data[j] = temp;
                 }
-
             } // 회전 종료
             System.out.println(i + 1 + "회전 결과: " + Arrays.toString(data));
-
         } // 정렬 종료
 //		System.out.println("정렬 결과: " + Arrays.toString(data));
-
     }
-
 }
 
 
