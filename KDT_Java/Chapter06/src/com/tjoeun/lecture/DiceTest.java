@@ -37,24 +37,12 @@ public class DiceTest {
 			*/
 
             switch (dice) {
-                case 1:
-                    num1++;
-                    break;
-                case 2:
-                    num2++;
-                    break;
-                case 3:
-                    num3++;
-                    break;
-                case 4:
-                    num4++;
-                    break;
-                case 5:
-                    num5++;
-                    break;
-                case 6:
-                    num6++;
-                    break;
+                case 1 -> num1++;
+                case 2 -> num2++;
+                case 3 -> num3++;
+                case 4 -> num4++;
+                case 5 -> num5++;
+                case 6 -> num6++;
             }
         }
 
@@ -65,9 +53,7 @@ public class DiceTest {
         System.out.println("4의 개수: " + num4);
         System.out.println("5의 개수: " + num5);
         System.out.println("6의 개수: " + num6);
-
     }
-
 }
 
 

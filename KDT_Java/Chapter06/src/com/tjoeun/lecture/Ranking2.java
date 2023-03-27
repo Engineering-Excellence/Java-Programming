@@ -17,14 +17,12 @@ public class Ranking2 {
 
         for (int i = 0; i < score.length - 1; i++) {
             for (int j = i + 1; j < score.length; j++) {
-
 //				i번째 점수가 크면 j번째 석차를 증가시키고 j번째 점수가 크면 i번째 석차를 증가시킨다.
                 if (score[i] > score[j]) {
                     rank[j]++;
                 } else if (score[i] < score[j]) {
                     rank[i]++;
                 }
-
             }
         }
 
@@ -38,9 +36,7 @@ public class Ranking2 {
             }
             System.out.println();
         }
-
     }
-
 }
 
 

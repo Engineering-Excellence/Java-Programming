@@ -56,9 +56,7 @@ public class ArrayTest {
         for (String str : name) {
             System.out.println(str);
         }
-
     }
-
 }
 
 

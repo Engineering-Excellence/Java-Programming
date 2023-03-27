@@ -42,9 +42,7 @@ public class Fibonacci2 {
             System.out.print(fibo[i]);
         }
         System.out.println();
-
     }
-
 }
 
 

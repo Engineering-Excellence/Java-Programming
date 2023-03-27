@@ -19,9 +19,7 @@ public class DiceTest3 {
         for (int i = 0; i < count.length; i++) {
             System.out.println(i + 1 + "의 개수: " + count[i]);
         }
-
     }
-
 }
 
 

@@ -63,9 +63,7 @@ public class CardShuffle {
             }
         }
         System.out.println("============================================ 섞은후");
-
     }
-
 }
 
 

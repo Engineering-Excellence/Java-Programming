@@ -24,7 +24,5 @@ public class Fibonacci {
         }
 
         System.out.println("피보나치 수열의 " + n + "번째 항 까지의 합계: " + y);
-
     }
-
 }
