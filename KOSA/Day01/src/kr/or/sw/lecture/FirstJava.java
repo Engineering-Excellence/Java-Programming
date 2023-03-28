@@ -7,5 +7,5 @@ class FirstJava {
         System.out.println("DaeBo");
         System.out.print("Kyle");
         System.out.printf("%n%d %c %s%n", 100, 'A', "kbs mbc");
-    }    // main end
-}    // class end
+    }    // end main
+}    // end class
