@@ -13,11 +13,11 @@ public class MainEntry {
         System.out.println("static value: " + Num + ", " + str);
 
         int su = 30;
-        System.out.println(su); // 4 byte
-        System.out.println(100);    // 4 byte
+        System.out.println(su); // 4byte
+        System.out.println(100);    // 4byte
 
         long num = 20;
-        System.out.println(num);    // 8 byte
+        System.out.println(num);    // 8byte
         System.out.println(1000L);   // long
 
         double d = 12.34;

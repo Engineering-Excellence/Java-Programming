@@ -18,11 +18,11 @@ public class MainEntry {
 
         System.out.println("------------------------------------------------------------------------------------------");
 
-        // 산술 연산자
+        // 산술 연산자: +, -, *, /, %
         x = 10; y = 20;
         int gob = x * y;
-        System.out.println("x * y = " + x * y);
-        System.out.println(x + " * " + y + " = " + x * y);
+        System.out.println("x * y = " + gob);
+        System.out.println(x + " * " + y + " = " + gob);
         System.out.println("3 + 4 * 5 = " + (3 + 4 * 5));
         System.out.println("(3 + 4) * 5 = " + (3 + 4) * 5);
 
@@ -41,7 +41,5 @@ public class MainEntry {
         y = ~x;
         System.out.println("x = " + x + ", y = " + y);
         System.out.println("x = " + Integer.toBinaryString(x) + ", y = " + Integer.toBinaryString(y));
-
-
     }
 }

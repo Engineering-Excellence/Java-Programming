@@ -8,7 +8,7 @@ public class MainEntry {
     public static void main(String[] args) {
 
         // 표준 입력: System.in
-        Scanner sc = new Scanner(System.in);    // 객체 생성, 메모리 할당, 생성자 함수 자동 호출
+        Scanner sc = new Scanner(System.in);    // 인스턴스 객체 생성, 메모리 할당, 생성자 함수 자동 호출
         System.out.print("정수 데이터 입력: ");
         int su = sc.nextInt();
         sc.close();
