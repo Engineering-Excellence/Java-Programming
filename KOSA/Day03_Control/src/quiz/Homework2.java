@@ -21,14 +21,14 @@ public class Homework2 {
 
         scanner.close();
 
-        if (num2 == 0 && oper.equals("/")) {
+        if (num2 == 0 && oper.equals("/")) {    // 0으로 나눌 경우 예외 처리
             System.out.println("0으로 나눌 수 없습니다.");
         } else {
             System.out.printf("%.1f %s %.1f = %.1f%n", num1, oper, num2, calculator(num1, oper, num2));
         }
     }
 
-    private static float calculator(float num1, String oper, float num2) {
+    static float calculator(float num1, String oper, float num2) {
 
         float answer = 0.f;
         if (oper.equals("+")) answer = num1 + num2; // String은 참조자료형이므로 equals()로 값을 비교
