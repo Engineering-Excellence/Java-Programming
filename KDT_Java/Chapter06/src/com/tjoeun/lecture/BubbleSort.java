@@ -6,7 +6,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
 
-		int[] data = {8, 3, 4, 9, 1};
+        int[] data = {8, 3, 4, 9, 1};
 //        int[] data = {9, 1, 3, 4, 8};
 
         for (int i = 0; i < data.length - 1; i++) { // 회전수 제어
