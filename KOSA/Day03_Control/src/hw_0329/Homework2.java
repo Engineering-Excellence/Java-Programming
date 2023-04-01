@@ -1,4 +1,4 @@
-package quiz;
+package hw_0329;
 
 import java.util.Scanner;
 
