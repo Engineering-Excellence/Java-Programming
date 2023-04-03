@@ -25,7 +25,11 @@ public class QuizEx1 {
 //        System.out.printf("배열 %s의 데이터 중에서 %d의 개수: %d개%n", Arrays.toString(Arrays.stream(intArr3).sorted().toArray()), n, Arrays.stream(intArr3).filter(i -> i == n).count());  // 선택한 데이터 개수 출력
 
         // 홀수 인덱스 위치 데이터만 출력
-        System.out.printf("배열 %s의 데이터 중에서 홀수 인덱스 위치 데이터만 출력: ", Arrays.toString(Arrays.stream(intArr3).sorted().toArray()));
-//        Arrays.stream(intArr3).filter(i -> intArr3[i] % 2 == 1).forEach(i -> System.out.print(i + " "));
+        System.out.printf("배열 %s의 데이터 중에서 홀수 인덱스 위치 데이터만 출력: ", Arrays.toString(Arrays.stream(intArr3).toArray()));
+        StringBuilder oddIndexData = new StringBuilder();
+        for (int i = 1; i < intArr3.length; i += 2) {
+            oddIndexData.append(intArr3[i]).append(", ");
+        }
+        System.out.println(oddIndexData.substring(0, oddIndexData.length() - 2));
     }
 }
