@@ -24,3 +24,8 @@ public class MultiBreak {
         System.out.println("123456");   // 5
     }
 }
+
+/*
+    식별자1:
+
+ */
