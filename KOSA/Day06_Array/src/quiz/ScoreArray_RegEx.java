@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 // 성적 처리 배열, 석차 정렬 이용하기
 
 // 싱글톤 패턴
-class SCORE3 {
+class Score_RegEx {
 
     // Field
     private String name;    // 이름
@@ -96,7 +96,7 @@ class SCORE3 {
     }
 }
 
-public class ScoreArrayRegEx {
+public class ScoreArray_RegEx {
 
     public static void main(String[] args) {
 
@@ -105,7 +105,7 @@ public class ScoreArrayRegEx {
         int num = scanner.nextInt(); // 학생 수
         scanner.nextLine(); // 키보드 버퍼 제거
 
-        SCORE3[] student = new SCORE3[num];
+        Score_RegEx[] student = new Score_RegEx[num];
         String temp;    // 키보드 임시 입력 저장
 
         // 정규식 패턴
@@ -116,7 +116,7 @@ public class ScoreArrayRegEx {
             temp = scanner.nextLine().trim();
             boolean flag = false;
 
-            student[i] = new SCORE3();
+            student[i] = new Score_RegEx();
             do {
                 if (flag) {
                     System.out.printf("한글 이름과 점수의 범위를 확인하신 후, '학번 이름 국어 영어 수학' 순서로 입력하세요(%d/%d).: ", i + 1, num);
@@ -159,9 +159,11 @@ public class ScoreArrayRegEx {
         }
 
         System.out.println("\n학번\t이름\t국어\t영어\t수학\t총점\t평균\t\t학점\t석차\n========================================================================");
-        for (SCORE3 score3 : student) { // 결과 출력
-            if (score3 != null) {
-                System.out.printf("%2d번\t%-3s\t%3d점\t%3d점\t%3d점\t%3d점\t%6.2f점\t%2c\t\t%d/%d%n", score3.getStuNum(), score3.getName(), score3.getKor(), score3.getEng(), score3.getMath(), score3.getTot(), score3.getAvg(), score3.getGrade(), score3.getRank(), num);
+        for (Score_RegEx scoreRegEx : student) { // 결과 출력
+            if (scoreRegEx != null) {
+                System.out.printf("%2d번\t%-3s\t%3d점\t%3d점\t%3d점\t%3d점\t%6.2f점\t%2c\t\t%d/%d%n", scoreRegEx.getStuNum(), scoreRegEx.getName(), scoreRegEx.getKor(), scoreRegEx.getEng(), scoreRegEx.getMath(), scoreRegEx.getTot(), scoreRegEx.getAvg(), scoreRegEx.getGrade(), scoreRegEx.getRank(), num);
+            } else {
+                break;  // 입력 중단시 반복 탈출
             }
         }
     }
