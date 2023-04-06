@@ -11,6 +11,8 @@ public class MainEntry {
         System.out.println("main end");
         line();
         plus(10, 20, "Hello, world!");
+        line();
+        abs(-100);
     }
 
     // 1) 매개변수 없고, 리턴타입 없는 경우

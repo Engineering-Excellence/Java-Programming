@@ -6,6 +6,7 @@ public class MainEntry {
 
         line();
 
+        plus(-50);
         plus(12.34);
         plus(20, 30);
         plus("Hello");
@@ -42,7 +43,7 @@ public class MainEntry {
     static void line(String str) {
 
         for (int i = 0; i < str.length(); i++) {
-            System.out.print(str);
+            System.out.println(str);
         }
     }
 

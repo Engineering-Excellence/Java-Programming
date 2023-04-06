@@ -1,0 +1,4 @@
+package quiz;
+
+class Student {
+}

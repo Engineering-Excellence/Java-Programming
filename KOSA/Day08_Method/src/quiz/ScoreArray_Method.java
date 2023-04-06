@@ -8,11 +8,13 @@ import java.util.regex.Pattern;
 public class ScoreArray_Method {
 
     static String input() { // 성적 입력
+
         System.out.print("'이름 국어 영어 수학' 순서로 입력하세요.: ");
         return new Scanner(System.in).nextLine().trim();
     }
 
     static void output(String[] name, int[][] score, int[] tot, double[] avg, char[] grd, int[] rank) { // 성적 출력
+
         System.out.println("\n학번\t이름\t국어\t영어\t수학\t총점\t평균\t\t학점\t석차\n========================================================================");
         for (int i = 0; i < name.length; i++) {
             System.out.printf("%2d번\t%-3s\t%3d점\t%3d점\t%3d점\t%3d점\t%6.2f점\t%2c\t\t%d/%d%n", i + 1, name[i], score[i][0], score[i][1], score[i][2], tot[i], avg[i], grd[i], rank[i], num);
@@ -20,6 +22,7 @@ public class ScoreArray_Method {
     }
 
     static int[] tot(int[][] score) {   // 총점 계산
+
         int[] tot = new int[score.length];
         for (int i = 0; i < score.length; i++) {
             for (int j = 0; j < score[i].length; j++) {
@@ -30,6 +33,7 @@ public class ScoreArray_Method {
     }
 
     static double[] avg(int[] tot) {    // 평균 계산
+
         double[] avg = new double[tot.length];
         for (int i = 0; i < tot.length; i++) {
             avg[i] = (double) tot[i] / 3;
@@ -38,6 +42,7 @@ public class ScoreArray_Method {
     }
 
     static char[] grd(double[] avg) {   // 학점 계산
+
         char[] grd = new char[avg.length];
         for (int i = 0; i < avg.length; i++) {
             grd[i] = switch ((int) avg[i] / 10) {
@@ -52,6 +57,7 @@ public class ScoreArray_Method {
     }
 
     static int[] rank(double[] avg) {   // 석차 계산
+
         int[] rank = new int[avg.length];
         Arrays.fill(rank, 1);   // 모든 석차를 1로 초기화
         for (double d : avg) {
@@ -87,9 +93,9 @@ public class ScoreArray_Method {
                 Matcher matcher = pattern.matcher(temp);
                 if (matcher.matches()) {    // 정규식 일치시 이름과 점수를 입력 후 do while 탈출
                     name[i] = temp.split(" ")[0];
-                    score[i][0] = Integer.parseInt(temp.split(" ")[1]);
-                    score[i][1] = Integer.parseInt(temp.split(" ")[2]);
-                    score[i][2] = Integer.parseInt(temp.split(" ")[3]);
+                    for (int j = 0; j < 3; j++) {
+                        score[i][j] = Integer.parseInt(temp.split(" ")[j + 1]);
+                    }
                 } else {    // 정규식 불일치시 do while 반복
                     flag = true;
                 }
