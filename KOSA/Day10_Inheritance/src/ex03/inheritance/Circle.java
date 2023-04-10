@@ -14,6 +14,7 @@ public class Circle extends Point { // sub class: 생성자를 제외한 나머�
 //        this.x = x;
 //        this.y = y;
         this.r = r;
+        System.out.println("Circle 2 Constructor");
     }
 
     @Override

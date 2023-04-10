@@ -17,7 +17,7 @@ public class Point {    // super class
     }
 
     public Point(int x, int y) {
-        super();
+//        super();
         this.x = x;
         this.y = y;
         System.out.println("Point xy Constructor");

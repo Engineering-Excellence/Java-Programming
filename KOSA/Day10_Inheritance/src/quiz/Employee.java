@@ -3,11 +3,11 @@ package quiz;
 public class Employee {
 
     // Field
-    protected int empNo;  // 사번
-    protected String name;    // 이름
+    private int empNo;  // 사번, 급여와 성과급에 무관(private)
+    private String name;    // 이름, 급여와 성과급에 무관(private)
     protected String dept; // 부서
     protected String pos;    // 직급: 관리관, 이사관, 서기관, 사무관, 주사, 서기
-    protected String contact;   // 연락처
+    private String contact;   // 연락처, 급여와 성과급에 무관(private)
 
     // Constructor
     public Employee(int empNo, String name, String contact) {

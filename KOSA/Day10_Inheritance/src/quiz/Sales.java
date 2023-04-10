@@ -2,13 +2,16 @@ package quiz;
 
 public class Sales extends Regular {
 
-    private long com;    // 커미션
+    // Field
+    private long com;    // 성과급
 
+    // Constructor
     public Sales(int empNo, String name, String pos, String dept, String contact) {
         super(empNo, name, pos, dept, contact);
         setCom();
     }
 
+    // Getters & Setters
     public long getCom() {
         return com;
     }
@@ -18,7 +21,7 @@ public class Sales extends Regular {
     }
 
     public long calCom(String pos) {
-        return (long) (sal * calSal(pos) * 0.000015);
+        return (long) (sal * calSal(pos) * 0.00003);
     }
 
     @Override

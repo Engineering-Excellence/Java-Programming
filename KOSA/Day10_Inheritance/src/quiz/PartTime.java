@@ -3,15 +3,18 @@ package quiz;
 // 근무일수 * 시간당 단가, 이름, 임시사번, 부서, 연락처, 월급체계 다름
 public class PartTime extends Employee {
 
-    private long pay;
-    private int workDay;
+    // Field
+    private long pay;   // 단가
+    private int workDay;    // 근무일
 
+    // Constructor
     public PartTime(int empNo, String name, String pos, String dept, String contact, int workDay) {
         super(empNo, name, pos, dept, contact);
         setWorkDay(workDay);
         setPay(calTotPay());
     }
 
+    // Getters & Setters
     public int getWorkDay() {
         return workDay;
     }
@@ -29,7 +32,7 @@ public class PartTime extends Employee {
             case "기간제근로자" -> 100;
             case "일일근로자" -> 80;
             default -> 0;
-        };;
+        };
     }
 
     public long calTotPay() {

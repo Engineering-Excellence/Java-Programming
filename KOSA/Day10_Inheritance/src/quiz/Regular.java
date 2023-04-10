@@ -2,13 +2,16 @@ package quiz;
 
 public class Regular extends Employee {
 
-    protected long sal;    // 급여
+    // Field
+    protected long sal;    // 기본급
 
+    // Constructor
     public Regular(int empNo, String name, String pos, String dept, String contact) {
         super(empNo, name, pos, dept, contact);
         setSal();
     }
 
+    // Getters & Setters
     public long getSal() {
         return sal;
     }
