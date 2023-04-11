@@ -1,4 +1,4 @@
-package ex01.abstractClass;
+package ex01.abstract_class;
 
 abstract class Shape { // 추상 클래스, 부모 클래스
 

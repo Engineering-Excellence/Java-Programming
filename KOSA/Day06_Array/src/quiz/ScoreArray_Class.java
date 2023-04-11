@@ -28,40 +28,50 @@ class Score_Class {
         this.math = math;
         this.tot = kor + eng + math;
         this.avg = this.tot / 3.;
-        this.setGrade();
+        setGrade();
     }
 
     // Getter & Setter
     public String getName() {
         return name;
     }
+
     public int getStuNum() {
         return stuNum;
     }
+
     public int getKor() {
         return kor;
     }
+
     public int getEng() {
         return eng;
     }
+
     public int getMath() {
         return math;
     }
+
     public int getTot() {
         return tot;
     }
+
     public int getRank() {
         return rank;
     }
+
     public void setRank(int rank) {
         this.rank = rank;
     }
+
     public double getAvg() {
         return avg;
     }
+
     public char getGrade() {
         return grade;
     }
+
     private void setGrade() {
         this.grade = switch ((int) this.getAvg() / 10) { // 학점 계산
             case 10, 9 -> 'A';

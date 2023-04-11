@@ -28,9 +28,9 @@ public class Score /*implements Comparable<Score> */ {
         this.kor = kor;
         this.eng = eng;
         this.math = math;
-        this.setTot(kor, eng, math);
-        this.setAvg();
-        this.setGrade();
+        setTot(kor, eng, math);
+        setAvg();
+        setGrade();
     }
 
     // Getter & Setter

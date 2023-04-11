@@ -1,4 +1,4 @@
-package ex02.abstractClass;
+package ex02.abstract_class;
 
 public class MainEntry {
 
