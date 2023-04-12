@@ -30,7 +30,7 @@ class Atm {
 
 public class MainEntry {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {    // 시작점(진입점)
 
         System.out.println(Atm.total);
         Atm atm1 = new Atm(1000);
