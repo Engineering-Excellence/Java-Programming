@@ -1,23 +1,24 @@
 package quiz;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class CustomerMain {
 
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Customer> customerList = new ArrayList<>();
+    static List<Customer> customerList = new ArrayList<>();
 
     public static void main(String[] args) {
 
         String menu;
 
         do {
-            System.out.print("메뉴를 입력하세요(1: 추가, 2: 삭제, 3: 출력, 4: 수정, 5: 종료): ");
-            menu = scanner.next();
+            System.out.print("메뉴를 입력하세요.(1: 추가, 2: 삭제, 3: 출력, 4: 수정, 5: 종료): ");
+            menu = scanner.nextLine();
 
-            switch (menu) {
+            switch (menu.trim()) {
                 case "1" -> addCustomer();
                 case "2" -> deleteCustomer();
                 case "3" -> printCustomerList();
@@ -33,19 +34,18 @@ public class CustomerMain {
 
     private static void addCustomer() {
         System.out.println("고객정보를 입력하세요.");
-        scanner.nextLine();
         System.out.print("이름: ");
         String name = scanner.nextLine();
         System.out.print("주소: ");
-        String address = scanner.nextLine();
+        String addr = scanner.nextLine();
         System.out.print("전화번호: ");
         String tel = scanner.nextLine();
-        customerList.add(new Customer(name, address, tel));
+        customerList.add(new Customer(name, addr, tel));
     }
 
     private static void deleteCustomer() {
         System.out.println("삭제할 고객의 전화번호를 입력하세요.");
-        String tempTel = scanner.next();
+        String tempTel = scanner.nextLine();
 
         for (int i = 0; i < customerList.size(); i++) {
             if (customerList.get(i).getTel().equals(tempTel)) {
@@ -55,7 +55,6 @@ public class CustomerMain {
             }
         }
         System.out.println("고객정보가 존재하지 않습니다.");
-        scanner.nextLine();
     }
 
     private static void printCustomerList() {
@@ -65,23 +64,36 @@ public class CustomerMain {
 
     private static void updateCustomer() {
         System.out.println("수정할 고객의 전화번호를 입력하세요.");
-        String tempTel = scanner.next();
-        for (int i = 0; i < customerList.size(); i++) {
-            if (customerList.get(i).getTel().equals(tempTel)) {
-                System.out.println("수정할 고객정보를 입력하세요.");
-                scanner.nextLine();
-                System.out.print("이름: ");
-                String name = scanner.nextLine();
-                System.out.print("주소: ");
-                String address = scanner.nextLine();
-                System.out.print("전화번호: ");
-                String tel = scanner.nextLine();
-                customerList.set(i, new Customer(name, address, tel));
+        String tempTel = scanner.nextLine();
+        for (Customer customer : customerList) {
+            if (customer.getTel().equals(tempTel)) {
+                System.out.print("수정할 고객정보를 입력하세요.(1: 이름, 2: 주소, 3:전화번호, 그 외: 취소)");
+                String update = scanner.nextLine();
+                switch (update.trim()) {
+                    case "1" -> {
+                        System.out.print("이름: ");
+                        String name = scanner.nextLine();
+                        customer.setName(name);
+                    }
+                    case "2" -> {
+                        System.out.print("주소: ");
+                        String addr = scanner.nextLine();
+                        customer.setAddr(addr);
+                    }
+                    case "3" -> {
+                        System.out.print("전화번호: ");
+                        String tel = scanner.nextLine();
+                        customer.setTel(tel);
+                    }
+                    default -> {
+                        System.out.println("고객정보 수정 취소");
+                        return;
+                    }
+                }
                 System.out.println("고객정보 수정 완료");
                 return;
             }
         }
         System.out.println("고객정보가 존재하지 않습니다.");
-        scanner.nextLine();
     }
 }
