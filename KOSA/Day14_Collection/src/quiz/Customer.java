@@ -4,8 +4,7 @@ class Customer {
 
     private String name;    // 고객명
     private String addr;    // 주소
-    private String tel; // 전화번호
-
+    private String tel;     // 전화번호
 
     public Customer(String name, String addr, String tel) {
         this.name = name;
