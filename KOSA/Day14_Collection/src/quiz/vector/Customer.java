@@ -1,5 +1,6 @@
-package quiz;
+package quiz.vector;
 
+// Model
 class Customer {
 
     private String name;    // 고객명

@@ -3,6 +3,7 @@ package ex02.list;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// List: 순서 O, 중복 O
 public class ArrayListEx {
 
     public static void main(String[] args) {

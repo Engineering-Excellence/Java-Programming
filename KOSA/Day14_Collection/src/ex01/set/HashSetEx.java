@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.IntStream;
 
+// Set: 순서 X, 중복 X
 public class HashSetEx {
 
     public static void main(String[] args) {

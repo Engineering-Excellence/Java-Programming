@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Vector;
 
+// List: 순서 O, 중복 O
 public class VectorEx2 {
 
     public static void main(String[] args) {

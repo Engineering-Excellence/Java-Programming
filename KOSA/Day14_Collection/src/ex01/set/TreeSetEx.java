@@ -3,6 +3,7 @@ package ex01.set;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
 
+// Set: 순서 X, 중복 X
 public class TreeSetEx {
 
     public static void main(String[] args) {

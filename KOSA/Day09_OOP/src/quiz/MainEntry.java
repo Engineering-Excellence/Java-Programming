@@ -13,7 +13,7 @@ public class MainEntry {
 
         int population = instance.inputPopulation(scanner);
         Score[] score = new Score[population];
-        String temp;    // 키보드 임시 입 저장
+        String temp;    // 키보드 임시 입력 저장
 
         // 정규식 패턴
         Pattern pattern = Pattern.compile("^(100|[1-9]?\\d)\\s[가-힣]+\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)$");    // 한글 및 공백과 0 이상 100 이하의 숫자로만 이루어진 "숫자 한글 숫자 숫자 숫자" 형태의 정규식

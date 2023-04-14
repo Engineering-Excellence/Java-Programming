@@ -3,6 +3,7 @@ package ex01.set;
 import java.util.HashSet;
 import java.util.Set;
 
+// Set: 순서 X, 중복 X
 class Person extends Object {   // Object를 자동 상속
 
     String name;
