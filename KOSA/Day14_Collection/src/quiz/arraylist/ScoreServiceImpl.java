@@ -9,13 +9,14 @@ import java.util.regex.Pattern;
 public class ScoreServiceImpl implements ScoreService {
 
     private static final List<ScoreDTO> SCORE_LIST = new ArrayList<>();
-    private static final ScoreService INSTANCE = new ScoreServiceImpl();
-    protected static final Scanner SCANNER = new Scanner(System.in);
+    static final Scanner SCANNER = new Scanner(System.in);
 
     // RegEx Pattern
-    protected static final Pattern pattern = Pattern.compile("^[가-힣]+\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)$");    // 한글 및 공백과 0 이상 100 이하의 숫자로만 이루어진 "한글 숫자 숫자 숫자" 형태의 정규식
+    static final Pattern pattern = Pattern.compile("^[가-힣]+\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)$");    // 한글 및 공백과 0 이상 100 이하의 숫자로만 이루어진 "한글 숫자 숫자 숫자" 형태의 정규식
 
     // Singleton Pattern
+    private static final ScoreService INSTANCE = new ScoreServiceImpl();
+
     private ScoreServiceImpl() {
     }
 
@@ -23,6 +24,7 @@ public class ScoreServiceImpl implements ScoreService {
         return INSTANCE;
     }
 
+    // 성적 등록
     @Override
     public boolean addScore() {
         System.out.print("'이름 국어 영어 수학' 순서로 입력하세요.: ");
@@ -30,23 +32,27 @@ public class ScoreServiceImpl implements ScoreService {
         String[] split = input.split(" ");
         if (pattern.matcher(input).matches()) {
             SCORE_LIST.add(new ScoreDTO(split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3])));
-            return refreshRank();
+            return calRank();
         }
+        System.out.println("잘못된 입력입니다.");
         return false;
     }
 
+    // 성적 조회
     @Override
     public void printScoreList() {
+        calRank();
         System.out.println("\n학번\t이름\t국어\t영어\t수학\t총점\t평균\t\t학점\t석차\n========================================================================");
         for (ScoreDTO s : SCORE_LIST) {
             if (s != null) {
-                System.out.printf("%2d번\t%-3s\t%3d점\t%3d점\t%3d점\t%3d점\t%6.2f점\t%2c\t\t%d/%d%n", s.getStdNum(), s.getName(), s.getKor(), s.getEng(), s.getMath(), s.getTot(), s.getAvg(), s.getGrade(), s.getRank(), SCORE_LIST.size());
+                System.out.printf("%s/%d%n", s, SCORE_LIST.size());
             } else {
                 break;  // 입력한 부분까지 출력 후 반복 탈출
             }
         }
     }
 
+    // 성적 수정
     @Override
     public boolean updateScore() {
         System.out.print("\n수정할 성적정보의 학번을 입력하세요.: ");
@@ -81,30 +87,32 @@ public class ScoreServiceImpl implements ScoreService {
                         return false;
                     }
                 }
-                return refreshRank();
+                return calRank();
             }
         }
         System.out.println("잘못된 입력입니다.");
         return false;
     }
 
+    // 성적 삭제
     @Override
     public boolean deleteScore() {
-        System.out.print("\n삭제할 학생의 학번을 입력하세요.: ");
+        System.out.print("\n삭제할 성적정보의 학번을 입력하세요.: ");
         String stdNum = SCANNER.nextLine();
         for (int i = 0; i < SCORE_LIST.size(); i++) {
             if (SCORE_LIST.get(i).getStdNum() == Integer.parseInt(stdNum)) {
                 SCORE_LIST.remove(i);
-                return refreshRank();
+                return calRank();
             }
         }
         System.out.println("학생정보가 존재하지 않습니다.");
         return false;
     }
 
+    // 석차 계산
     @Override
-    public boolean refreshRank() {
-        SCORE_LIST.forEach(o -> o.setRank(1));
+    public boolean calRank() {
+        SCORE_LIST.forEach(s -> s.setRank(1));  // 모든 석차를 1로 초기화
         for (ScoreDTO i : SCORE_LIST) {
             for (ScoreDTO j : SCORE_LIST) {
                 if (i.getTot() > j.getTot()) {

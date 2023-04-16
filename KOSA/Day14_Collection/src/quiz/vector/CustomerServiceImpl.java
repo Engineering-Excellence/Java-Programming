@@ -7,7 +7,7 @@ import java.util.Vector;
 // Controller
 public class CustomerServiceImpl implements CustomerService {
 
-    protected static final Scanner SCANNER = new Scanner(System.in);
+    static final Scanner SCANNER = new Scanner(System.in);
     private static final List<Customer> CUSTOMER_LIST = new Vector<>();
 
     // Singleton

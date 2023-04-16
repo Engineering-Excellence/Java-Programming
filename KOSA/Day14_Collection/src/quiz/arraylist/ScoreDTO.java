@@ -1,7 +1,7 @@
 package quiz.arraylist;
 
 // Model
-public class ScoreDTO {
+public class ScoreDTO implements Comparable<ScoreDTO> {
 
     // Field
     private static int seq; // 시퀀스
@@ -22,7 +22,7 @@ public class ScoreDTO {
         this.kor = kor;
         this.eng = eng;
         this.math = math;
-        updateScore();
+        calScore();
     }
 
     // Getters & Setters
@@ -44,7 +44,7 @@ public class ScoreDTO {
 
     public void setKor(int kor) {
         this.kor = kor;
-        updateScore();
+        calScore();
     }
 
     public int getEng() {
@@ -53,7 +53,7 @@ public class ScoreDTO {
 
     public void setEng(int eng) {
         this.eng = eng;
-        updateScore();
+        calScore();
     }
 
     public int getMath() {
@@ -62,7 +62,7 @@ public class ScoreDTO {
 
     public void setMath(int math) {
         this.math = math;
-        updateScore();
+        calScore();
     }
 
     public int getTot() {
@@ -103,9 +103,54 @@ public class ScoreDTO {
         this.rank = rank;
     }
 
-    public void updateScore() {
+    private void calScore() {
         setTot(kor, eng, math);
         setAvg();
         setGrade();
+    }
+
+    @Override
+    public int compareTo(ScoreDTO s) {
+        return -Double.compare(this.getAvg(), s.getAvg());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%2d번\t%-3s\t%3d점\t%3d점\t%3d점\t%3d점\t%6.2f점\t%2c\t\t%d", stdNum, name, kor, eng, math, tot, avg, grade, rank);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ScoreDTO scoreDTO = (ScoreDTO) o;
+
+        if (stdNum != scoreDTO.stdNum) return false;
+        if (kor != scoreDTO.kor) return false;
+        if (eng != scoreDTO.eng) return false;
+        if (math != scoreDTO.math) return false;
+        if (tot != scoreDTO.tot) return false;
+        if (Double.compare(scoreDTO.avg, avg) != 0) return false;
+        if (grade != scoreDTO.grade) return false;
+        if (rank != scoreDTO.rank) return false;
+        return name.equals(scoreDTO.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name.hashCode();
+        result = 31 * result + stdNum;
+        result = 31 * result + kor;
+        result = 31 * result + eng;
+        result = 31 * result + math;
+        result = 31 * result + tot;
+        temp = Double.doubleToLongBits(avg);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (int) grade;
+        result = 31 * result + rank;
+        return result;
     }
 }

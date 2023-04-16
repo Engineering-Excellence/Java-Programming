@@ -10,5 +10,5 @@ public interface ScoreService {
 
     boolean deleteScore();
 
-    boolean refreshRank();
+    boolean calRank();
 }

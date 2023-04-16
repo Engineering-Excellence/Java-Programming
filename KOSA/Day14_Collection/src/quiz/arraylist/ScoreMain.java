@@ -7,13 +7,14 @@ public class ScoreMain {
 
     private static final ScoreService SERVICE = ScoreServiceImpl.getInstance();
 
+
     public static void main(String[] args) {
 
         String menu;
 
         // 성적 입력
         do {
-            System.out.print("\n학사관리 시스템 메뉴를 입력하세요.(1: 추가, 2: 출력, 3: 수정, 4: 삭제, 5: 종료): ");
+            System.out.print("\n학사관리 시스템 메뉴를 입력하세요.(1: 등록, 2: 조회, 3: 수정, 4: 삭제, 5: 종료): ");
             menu = SCANNER.nextLine();
 
             switch (menu.trim()) {

@@ -5,7 +5,7 @@ import static quiz.vector.CustomerServiceImpl.SCANNER;
 // View
 public class CustomerMain {
 
-    protected static final CustomerService SERVICE = CustomerServiceImpl.getInstance();
+    private static final CustomerService SERVICE = CustomerServiceImpl.getInstance();
 
     public static void main(String[] args) {
 

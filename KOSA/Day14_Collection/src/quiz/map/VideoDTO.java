@@ -10,7 +10,7 @@ public class VideoDTO {
     private int no;
     private String title;
     private String category;
-    private boolean lend;
+    private boolean isLend;
     private String lendName;
     private Date lendDate;
 
@@ -19,7 +19,7 @@ public class VideoDTO {
         this.no = no;
         this.title = title;
         this.category = category;
-        this.lend = true;
+        this.isLend = true;
         this.lendName = lendName;
         this.lendDate = new Date();
     }
@@ -50,11 +50,11 @@ public class VideoDTO {
     }
 
     public boolean isLend() {
-        return lend;
+        return isLend;
     }
 
     public void setLend(boolean lend) {
-        this.lend = lend;
+        this.isLend = lend;
     }
 
     public String getLendName() {
@@ -76,7 +76,7 @@ public class VideoDTO {
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return String.format("비디오번호: %d, 비디오제목: %s, 장르: %s, 대여여부: %s, 고객명: %s, 대여일자: %s%n%s",no, title, category, lend, lendName, sdf.format(lendDate), "-".repeat(120));
+        return String.format("비디오번호: %d, 비디오제목: %s, 장르: %s, 대여여부: %s, 고객명: %s, 대여일자: %s%n%s",no, title, category, isLend, lendName, sdf.format(lendDate), "-".repeat(120));
     }
 
     @Override
@@ -87,7 +87,7 @@ public class VideoDTO {
         VideoDTO videoDTO = (VideoDTO) o;
 
         if (no != videoDTO.no) return false;
-        if (lend != videoDTO.lend) return false;
+        if (isLend != videoDTO.isLend) return false;
         if (!title.equals(videoDTO.title)) return false;
         if (!category.equals(videoDTO.category)) return false;
         if (!lendName.equals(videoDTO.lendName)) return false;
@@ -99,7 +99,7 @@ public class VideoDTO {
         int result = no;
         result = 31 * result + title.hashCode();
         result = 31 * result + category.hashCode();
-        result = 31 * result + (lend ? 1 : 0);
+        result = 31 * result + (isLend ? 1 : 0);
         result = 31 * result + lendName.hashCode();
         result = 31 * result + lendDate.hashCode();
         return result;

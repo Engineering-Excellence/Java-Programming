@@ -9,7 +9,7 @@ import java.util.Scanner;
 // Controller
 public class VideoServiceImpl implements VideoService {
 
-    protected static final Scanner SCANNER = new Scanner(System.in);
+    static final Scanner SCANNER = new Scanner(System.in);
     private static final Map<Integer, VideoDTO> VIDEO_MAP = new HashMap<>();
     private static int lendNo;
 
@@ -22,7 +22,7 @@ public class VideoServiceImpl implements VideoService {
     }
 
     public static synchronized VideoService getInstance() {
-        return VideoServiceImpl.LazyHolder.INSTANCE;
+        return LazyHolder.INSTANCE;
     }
 
     // 대여정보 추가
