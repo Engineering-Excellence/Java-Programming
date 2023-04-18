@@ -15,7 +15,9 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     private static class LazyHolder {
-        protected static final CustomerService INSTANCE = new CustomerServiceImpl();
+        private LazyHolder() {
+        }
+        private static final CustomerService INSTANCE = new CustomerServiceImpl();
     }
 
     public static synchronized CustomerService getInstance() {

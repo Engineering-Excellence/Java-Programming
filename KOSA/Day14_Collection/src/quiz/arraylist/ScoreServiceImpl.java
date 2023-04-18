@@ -2,6 +2,7 @@ package quiz.arraylist;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -12,7 +13,7 @@ public class ScoreServiceImpl implements ScoreService {
     static final Scanner SCANNER = new Scanner(System.in);
 
     // RegEx Pattern
-    static final Pattern pattern = Pattern.compile("^[가-힣]+\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)$");    // 한글 및 공백과 0 이상 100 이하의 숫자로만 이루어진 "한글 숫자 숫자 숫자" 형태의 정규식
+    static final Pattern PATTERN = Pattern.compile("^[가-힣]+\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)\\s(100|[1-9]?\\d)$");    // 한글 및 공백과 0 이상 100 이하의 숫자로만 이루어진 "한글 숫자 숫자 숫자" 형태의 정규식
 
     // Singleton Pattern
     private static final ScoreService INSTANCE = new ScoreServiceImpl();
@@ -28,9 +29,9 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public boolean addScore() {
         System.out.print("'이름 국어 영어 수학' 순서로 입력하세요.: ");
-        String input = SCANNER.nextLine();
-        String[] split = input.split(" ");
-        if (pattern.matcher(input).matches()) {
+        String input = SCANNER.nextLine().trim();
+        if (PATTERN.matcher(input).matches()) {
+            String[] split = input.split(" ");
             SCORE_LIST.add(new ScoreDTO(split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3])));
             return calRank();
         }
@@ -43,20 +44,14 @@ public class ScoreServiceImpl implements ScoreService {
     public void printScoreList() {
         calRank();
         System.out.println("\n학번\t이름\t국어\t영어\t수학\t총점\t평균\t\t학점\t석차\n========================================================================");
-        for (ScoreDTO s : SCORE_LIST) {
-            if (s != null) {
-                System.out.printf("%s/%d%n", s, SCORE_LIST.size());
-            } else {
-                break;  // 입력한 부분까지 출력 후 반복 탈출
-            }
-        }
+        SCORE_LIST.stream().filter(Objects::nonNull).forEach(s -> System.out.printf("%s/%d%n", s, SCORE_LIST.size()));
     }
 
     // 성적 수정
     @Override
     public boolean updateScore() {
         System.out.print("\n수정할 성적정보의 학번을 입력하세요.: ");
-        String stdNum = SCANNER.nextLine();
+        String stdNum = SCANNER.nextLine().trim();
         for (ScoreDTO score : SCORE_LIST) {
             if (score.getStdNum() == Integer.parseInt(stdNum)) {
                 System.out.print("\n수정할 성적정보를 입력하세요.(1: 이름, 2: 국어, 3: 영어, 4: 수학, 그 외: 취소): ");
@@ -64,22 +59,22 @@ public class ScoreServiceImpl implements ScoreService {
                 switch (update.trim()) {
                     case "1" -> {
                         System.out.print("이름: ");
-                        String name = SCANNER.nextLine();
+                        String name = SCANNER.nextLine().trim();
                         score.setName(name);
                     }
                     case "2" -> {
                         System.out.print("국어: ");
-                        String kor = SCANNER.nextLine();
+                        String kor = SCANNER.nextLine().trim();
                         score.setKor(Integer.parseInt(kor));
                     }
                     case "3" -> {
                         System.out.print("영어: ");
-                        String eng = SCANNER.nextLine();
+                        String eng = SCANNER.nextLine().trim();
                         score.setEng(Integer.parseInt(eng));
                     }
                     case "4" -> {
                         System.out.print("수학: ");
-                        String math = SCANNER.nextLine();
+                        String math = SCANNER.nextLine().trim();
                         score.setMath(Integer.parseInt(math));
                     }
                     default -> {
@@ -98,7 +93,7 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public boolean deleteScore() {
         System.out.print("\n삭제할 성적정보의 학번을 입력하세요.: ");
-        String stdNum = SCANNER.nextLine();
+        String stdNum = SCANNER.nextLine().trim();
         for (int i = 0; i < SCORE_LIST.size(); i++) {
             if (SCORE_LIST.get(i).getStdNum() == Integer.parseInt(stdNum)) {
                 SCORE_LIST.remove(i);

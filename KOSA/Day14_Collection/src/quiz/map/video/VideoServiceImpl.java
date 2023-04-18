@@ -1,4 +1,4 @@
-package quiz.map;
+package quiz.map.video;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,14 +11,16 @@ public class VideoServiceImpl implements VideoService {
 
     static final Scanner SCANNER = new Scanner(System.in);
     private static final Map<Integer, VideoDTO> VIDEO_MAP = new HashMap<>();
-    private static int lendNo;
 
     // Singleton Pattern
     private VideoServiceImpl() {
     }
 
     private static class LazyHolder {
-        protected static final VideoService INSTANCE = new VideoServiceImpl();
+        private static final VideoService INSTANCE = new VideoServiceImpl();
+
+        private LazyHolder() {
+        }
     }
 
     public static synchronized VideoService getInstance() {
@@ -38,7 +40,7 @@ public class VideoServiceImpl implements VideoService {
         String category = SCANNER.nextLine();
         System.out.print("고객명: ");
         String lendName = SCANNER.nextLine();
-        VIDEO_MAP.put(++lendNo, new VideoDTO(no, title, category, lendName));
+        VIDEO_MAP.put(VideoDTO.getKey(), new VideoDTO(no, title, category, lendName));
         return true;
     }
 

@@ -1,4 +1,4 @@
-package quiz.map;
+package quiz.map.video;
 
 public interface VideoService {
 

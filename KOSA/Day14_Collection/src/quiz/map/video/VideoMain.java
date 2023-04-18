@@ -1,6 +1,6 @@
-package quiz.map;
+package quiz.map.video;
 
-import static quiz.map.VideoServiceImpl.SCANNER;
+import static quiz.map.video.VideoServiceImpl.SCANNER;
 
 // View
 public class VideoMain {
