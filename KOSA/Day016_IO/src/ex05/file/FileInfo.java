@@ -8,7 +8,7 @@ public class FileInfo {
 
     public static void main(String[] args) throws IOException {
 
-        File file = null;
+        File file;
         byte[] fileName = new byte[100];
         String strName;
 
@@ -16,7 +16,7 @@ public class FileInfo {
         // 절대경로: /Users/kyle/Documents/Study/Java/KOSA/Day16_IO/src/ex05/file/memo.txt
         System.out.print("fileName: ");
 
-        System.in.read(fileName);   // 예외 발생
+        System.out.println("읽은 byte 수: " + System.in.read(fileName));   // 예외 발생
         strName = new String(fileName).trim();  // 읽은 파일명을 문자열로 변환
 
         file = new File(strName);

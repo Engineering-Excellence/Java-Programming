@@ -13,7 +13,7 @@ public class FileInputEx {
         OutputStream outputStream = null;
 
         try {
-//            OutputStream outputStream = new FileOutputStream("test.txt");   // 상대경로
+//            outputStream = new FileOutputStream("test.txt");   // 상대경로
             outputStream = new FileOutputStream("/Users/kyle/test.txt");   // 절대경로
             while (true) {
                 System.out.print("문자열 입력: ");
