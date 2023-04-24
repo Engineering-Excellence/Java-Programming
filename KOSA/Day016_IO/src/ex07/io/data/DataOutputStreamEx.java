@@ -9,7 +9,7 @@ public class DataOutputStreamEx {
 
     public static void main(String[] args) throws IOException { // 예외 처리 위임
 
-        File file = new File("Day16_IO/test.txt");
+        File file = new File("Day016_IO/test.txt");
         FileOutputStream fileOutputStream = new FileOutputStream(file); // 예외 발생
         DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
 

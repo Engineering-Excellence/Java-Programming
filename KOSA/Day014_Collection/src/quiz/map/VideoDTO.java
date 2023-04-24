@@ -1,4 +1,4 @@
-package quiz.map.video;
+package quiz.map;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,6 +1,4 @@
-package quiz.map.video;
-
-import static quiz.map.video.VideoServiceImpl.SCANNER;
+package quiz.map;
 
 // View
 public class VideoMain {
@@ -13,7 +11,7 @@ public class VideoMain {
 
         do {
             System.out.print("\n메뉴를 입력하세요.(1: 대여, 2: 반납, 3: 출력, 4: 수정, 5: 삭제, 6: 종료): ");
-            menu = SCANNER.nextLine();
+            menu = VideoServiceImpl.SCANNER.nextLine();
 
             switch (menu.trim()) {
                 case "1" -> {
