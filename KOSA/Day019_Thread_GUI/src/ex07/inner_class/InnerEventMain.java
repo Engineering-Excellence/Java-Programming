@@ -6,6 +6,7 @@ import java.awt.event.WindowEvent;
 
 public class InnerEventMain {   // Outer Class
 
+    // *Listener는 Interface임
     /*class EventHandler implements ActionListener {  // Inner Class
 
         @Override
