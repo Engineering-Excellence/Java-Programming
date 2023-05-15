@@ -495,8 +495,8 @@ BEGIN
             dbms_output.put(j
                             || ' * '
                             || i
-                            || '='
-                            ||(i * j)
+                            || ' = '
+                            || (i * j)
                             || '    ');
         END LOOP;
 

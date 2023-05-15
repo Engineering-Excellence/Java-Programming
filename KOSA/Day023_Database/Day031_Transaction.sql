@@ -28,12 +28,14 @@ ROLLBACK;
 UPDATE c_emp_ta
 SET sal = 800
 WHERE deptno = 10;
+
 -- SAVEPOINT 식별자
 SAVEPOINT update_sal;
 
 UPDATE c_emp_ta
 SET sal = 900
 WHERE deptno = 10;
+
 SAVEPOINT update_sal2;
 
 SELECT sal
