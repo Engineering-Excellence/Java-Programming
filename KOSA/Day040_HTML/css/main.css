@@ -1,0 +1,22 @@
+body {
+    background-color: yellow;
+}
+
+#tab {
+    border: 1px dotted blue;
+    width: 650px;
+    height: 30px;
+    text-align: center;
+    border-color: auqa;
+    border-collapse: collapse;
+}
+
+.xy .tbl2 {
+    border: 5px solid red;
+}
+
+.tbl,
+tr,
+td {
+    border: 1px dashed black;
+}
