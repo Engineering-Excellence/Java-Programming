@@ -13,6 +13,7 @@ public class MyModel extends AbstractTableModel {
 
     // DB에 저장된 데이터 채움
     public void setData(ResultSet rs) {
+
         try {
             String title;
             // 데이터에 대한 정보 얻어옴
@@ -39,6 +40,7 @@ public class MyModel extends AbstractTableModel {
     }
 
     public void getRowCount(ResultSet rsScroll) {  // USER Method
+
         try {
             rsScroll.last();    // 레코드의 마지막 행으로 이동
             rows = rsScroll.getRow();
@@ -49,16 +51,19 @@ public class MyModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {  // 레코드 행 개수
+
         return data.length;
     }
 
     @Override
     public int getColumnCount() {   // 레코드 열 개수
+
         return columnName.length;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {   // 원잣값
+
         return data[rowIndex][columnIndex];
     }
 }

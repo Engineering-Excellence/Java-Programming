@@ -19,8 +19,8 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     JPanel p1, p2, p3, p4, p5;
     JTextField txtNo, txtName, txtEmail, txtPhone;
     JButton btnTotal, btnAdd, btnDel, btnUpd, btnSearch, btnCancel;
-
     JTable table; // 검색과 전체 보기를 위한 테이블 객체 생성
+
     // 상태변화를 위한 변수 선언
     private static final int NONE = 0;
     private static final int ADD = 1;
@@ -33,6 +33,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     MyModel model;  // USER Class
 
     public JDBCProjectEx3() {   // 생성자 함수 - 필드 초기화
+
         // component 등록
         panWest = new JPanel(new GridLayout(5, 0));
         p1 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -104,6 +105,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     private String sqlUpdate = "UPDATE customers SET name = ?, email = ?, phone = ? WHERE code = ?";
 
     public void dbConnect() {
+
         try {
             conn = ConnectionHelper.getConnection("ORACLE");
             LOG.info("CONNECTION SUCCESS!");
@@ -128,6 +130,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {    // 버튼 이벤트 처리
+
         Object obj = e.getSource();
         if (obj == btnAdd) {
             if (cmd != ADD) {
@@ -167,6 +170,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
 
     // button event - 추가, 삭제, 검색, 전체 보기
     private void add() {
+
         try {
             String strNo = txtNo.getText();
             String strName = txtName.getText();
@@ -202,6 +206,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }   // add() end
 
     private void del() {
+
         total();
         String strNo;
         try {
@@ -234,10 +239,12 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }   // del() end
 
     private void search() {
+
         total();
     }
 
     private void total() {  // 전체 보기 버튼 이벤트 처리
+
         try {
             ResultSet rs = pstmtTotal.executeQuery();
             ResultSet rsScroll = pstmtTotalScroll.executeQuery();
@@ -255,6 +262,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }   // total() end
 
     private void upd() {
+
         total();
         try {
             String strName = txtName.getText();
@@ -289,6 +297,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }
 
     private void init() {  //초기화 메소드
+
         txtNo.setText("");
         txtNo.setEditable(false);
         txtName.setText("");
@@ -300,6 +309,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }// init() end
 
     private void setText(int command) {
+
         switch (command) {
             case ADD:
                 txtNo.setEditable(true);
@@ -327,6 +337,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     }// setText() end
 
     private void setButton(int command) {
+
         // cancel button 제외하고 어떤 버튼이 눌리더라도 모든 버튼이 비활성화
         btnTotal.setEnabled(false);
         btnAdd.setEnabled(false);
@@ -370,6 +381,7 @@ public class JDBCProjectEx3 extends JFrame implements ActionListener {
     } // setButton end
 
     public static void main(String[] args) {
+
         new JDBCProjectEx3();
     }
 }

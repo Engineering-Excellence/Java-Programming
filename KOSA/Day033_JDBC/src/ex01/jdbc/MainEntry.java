@@ -31,7 +31,7 @@ public class MainEntry {
 
 
         // 4. Close(자원 반환)
-
+        conn.close();
     }
     // SQL, Tag는 자바에서 문자열 취급
 }

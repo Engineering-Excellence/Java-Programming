@@ -29,6 +29,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     int cmd = NONE;
 
     public JDBCProjectEx2() {   // 생성자 함수 - 필드 초기화
+
         // component 등록
         panWest = new JPanel(new GridLayout(5, 0));
         p1 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -95,6 +96,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     private String sqlSearch = "SELECT * FROM customers WHERE name = ?";
 
     public void dbConnect() {
+
         try {
             conn = ConnectionHelper.getConnection("ORACLE");
             LOG.info("CONNECTION SUCCESS!");
@@ -118,6 +120,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {    // 버튼 이벤트 처리
+
         Object obj = e.getSource();
         if (obj == btnAdd) {
             if (cmd != ADD) {
@@ -152,6 +155,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     } // actionPerformed end
 
     private void init() {  //초기화 메소드
+
         txtNo.setText("");
         txtNo.setEditable(false);
         txtName.setText("");
@@ -163,6 +167,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     }// init() end
 
     private void setText(int command) {
+
         switch (command) {
             case ADD:
                 txtNo.setEditable(true);
@@ -180,6 +185,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     }// setText() end
 
     private void setButton(int command) {
+
         // cancel button 제외하고 어떤 버튼이 눌리더라도 모든 버튼이 비활성화
         btnTotal.setEnabled(false);
         btnAdd.setEnabled(false);
@@ -216,6 +222,7 @@ public class JDBCProjectEx2 extends JFrame implements ActionListener {
     } // setButton end
 
     public static void main(String[] args) {
+
         new JDBCProjectEx2();
     }
 }

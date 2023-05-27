@@ -6,15 +6,17 @@ import java.sql.SQLException;
 
 public interface EmpService {
 
-    String selectByGno();
+    String selectByEmpNo(int n) throws SQLException;
+
+    String selectByNoBtw(int startn, int endn) throws SQLException;
 
     String selectAll() throws SQLException;
 
-    int insert(int empno, String ename, String job, int mgr, Date hiredate, int sal, int comm, int deptno);
+    int insert() throws SQLException, IOException;
 
-    int update(int empno, String ename, String job, int mgr, Date hiredate, int sal, int comm, int deptno);
+    int update() throws IOException;
 
-    int delete(int empno);
+    int delete(int empno) throws SQLException, IOException;
 
     void exit() throws SQLException;
 
