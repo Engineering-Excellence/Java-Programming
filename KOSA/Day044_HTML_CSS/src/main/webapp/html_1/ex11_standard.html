@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ex11_standard.html</title>
+    <style>
+        * {
+            font-family: 궁서, 굴림, Serif, fantasy;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        img {
+            border-color: black;
+            border: 10px double;
+        }
+
+        .navi {
+            background: #003E00;
+            margin-top: -15px;
+            /*margin: 10px 15px 20px 5px;*/
+            width: 960px;
+            height: 60px;
+        }
+
+        .navi ul {
+            list-style: none;
+            height: 40px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .navi ul li {
+            display: inline;
+            float: left;
+            font-size: 15px;
+        }
+
+        .navi a, .navi a:visited {
+            padding: 10px 5px 5px 35px;
+            display: block;
+            color: #FFFFFF;
+            width: 120px;
+            text-decoration: none;
+        }
+
+        .navi a:hover, .navi a:active, .navi a:focus {
+            text-shadow: 0px 2px 2px #000000;
+            color: #FFCC00;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+<img src="../images/2.jpg" alt="css test">
+<!-- inline 우선-->
+<img src="../images/1.jpg" alt="test" style="border: 5px solid; border-color: pink">
+<hr>
+선택자 div가
+<div id="multi"><em>여러 개</em></div>
+있을 경우
+선택자 div가 <p><em>여러 개</em></p> 있을 경우
+
+<nav class="navi">
+    <ul>
+        <li><a href="#">애완견 종류</a></li>
+        <li><a href="#">입양하기</a></li>
+        <li><a href="#">건강 돌보기</a></li>
+        <li><a href="#">더불어 살기</a></li>
+    </ul>
+    <br>
+    <hr>
+    <ul>
+        <li><a href="#">애완견 종류</a></li>
+        <li><a href="#">입양하기</a></li>
+        <li><a href="#">건강 돌보기</a></li>
+        <li><a href="#">더불어 살기</a></li>
+    </ul>
+</nav>
+
+<p>
+    이제 <span class="accent">웹표준</span>의 역할은
+    아주 <span class="accent">중요</span>합니다.
+</p>
+</body>
+
+</html>
