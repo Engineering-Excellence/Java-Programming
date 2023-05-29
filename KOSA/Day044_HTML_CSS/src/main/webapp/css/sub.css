@@ -36,7 +36,7 @@ input:focus {
 }
 
 .box::after {
-    content: "뒤";
+    content: "";   /* 생략 불가 */
     display: block;
     width: 30px;
     height: 30px;
@@ -44,5 +44,5 @@ input:focus {
 }
 
 .box::before {
-    content: "앞";
+    content: "앞";   /* 생략 불가 */
 }
