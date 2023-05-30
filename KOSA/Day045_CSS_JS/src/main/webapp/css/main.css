@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+div { /* 1 */
+    color: red !important; /* 1000 */
+    border: 3px solid;
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/2.jpg');
+    /*background-image: url();*/
+}
+
+
+#color_yellow { /* 100 */
+    color: yellow;
+}
+
+.color_green { /* 10 */
+    color: green;
+}
+
+.list li.item { /* 10 + 1 + 10 */
+}
+
+.list li:hover { /* 10 + 1 + 10 */
+}
+
+.box::before { /* 10 + 1 */
+}
+
+#submit span { /* 100 + 1 */
+}
+
+header .menu li:nth-child(2) { /* 1 + 10 + 1 + 10 */
+}
+
+hi {
+}
+
+:not(.box) { /* 0 + 10 */
+}
