@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class & Array</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script type="text/javascript" src="../js/main7.js" defer></script>
+    <script type="text/javascript">
+        'use strict'
+
+        // 배열 처리 []
+        // 배열을 원소로 하는 배열(2차원 배열) - 3행 2열
+        let arr = [
+            ['김연아', '이순신'],
+            ['광개토대왕', '세종대왕'],
+            ['박태환', '강감찬']
+        ]
+        document.writeln(`arr[0]=${arr[0]}<br>`)
+        document.writeln(`arr[1]=${arr[1]}<br>`)
+        document.writeln(`arr[2]=${arr[2]}<br>`)
+        document.writeln(`arr[3]=${arr[3]}<br>`)
+        document.writeln('<br>')
+
+        document.writeln(`arr.length=${arr.length}<br>`)
+        document.writeln(`arr[0].length=${arr[0].length}<br>`)
+        document.writeln(`arr[2].length=${arr[2].length}<br>`)
+        document.writeln('<br>')
+
+        document.writeln(`세종대왕 출력: ${arr[1][1]}<br>`)
+        document.writeln(`강감찬 출력: ${arr[2][1]}<br>`)
+        document.writeln('<hr>')
+
+        let arr1 = []
+        document.writeln(`arr1[0]=${arr1[0]}<br>`)
+        document.writeln(`arr1[1]=${arr1[1]}<br>`)
+        document.writeln(`arr1[2]=${arr1[2]}<br>`)
+        document.writeln(`arr1[3]=${arr1[3]}<br>`)
+        document.writeln(`arr1.length=${arr1.length}<br>`)
+        document.writeln('<br>')
+
+        arr1[0] = 90
+        arr1[2] = 100
+        document.writeln(`arr1[0]=${arr1[0]}<br>`)
+        document.writeln(`arr1[1]=${arr1[1]}<br>`)
+        document.writeln(`arr1[2]=${arr1[2]}<br>`)
+        document.writeln(`arr1[3]=${arr1[3]}<br>`)
+        document.writeln(`arr1.length=${arr1.length}<br>`)
+        document.writeln('<hr>')
+
+        const num = 10  // number
+        const str = 'javascript'    // string
+
+        const point = {x: 100, y: 500}  // object
+        const arr2 = [1, 2, 3, 4, 5]    // array
+
+        const add = (su1, su2) => su1 + su2
+
+        document.writeln(`num=${num}<br>`)
+        document.writeln(`str=${str}<br>`)
+        document.writeln(`point.x=${point.x}<br>`)
+        document.writeln(`point["y"]=${point["y"]}<br>`)
+    </script>
+</head>
+
+<body>
+<hr>
+<h2>Class</h2>
+</body>
+
+</html>

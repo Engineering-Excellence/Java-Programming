@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+            integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+<header><h2>jQuery Sample</h2></header>
+<input type="text" id="inputDemo">
+<input type="button" value="변환1">
+<input type="button" value="변환2">
+
+<div class="welcome"></div>
+<div class="welcome"></div>
+<div id="demo">
+    <div class="inner">Create jQuery Test</div>
+</div>
+
+<hr>
+
+<div id="name">이 부분에 클릭 이벤트가 발생하면 자신의 이름을 출력하기</div>
+
+<script type="text/javascript">
+    $(() => $('div#name').on('click', function () {
+        $(this).html('Kyle')
+            .css({
+                'font-size': '64px',
+                'color': 'blue'
+            })
+    }))
+
+    $(() => {
+        // Chaining
+        /*$('.welcome').html('Hello, world!')
+            .css('background-color', 'orange')
+            .on('click mousemove keyup', function () {  // on 사용시 여러 이벤트를 한꺼번에 추가 가능!!
+            // .click(function () {
+                $(this).css('background-color', 'yellow')
+            })*/
+        $('.welcome').html('Hello, world!')
+            .css('background-color', 'orange')
+            .on('click', function (E) {
+                // $('.welcome').hide()
+                // console.log(E)
+                let clicked = E.target
+                console.log(clicked)
+                $(this).css('background-color', '#FF0000')
+            })
+
+        // document.getElementsByTagName('h2')[0].style.color = 'red'
+        // $('h2').css({'color': 'skyblue'})
+        // $('h2').css('color', 'aqua')
+
+        // id="demo" class="inner" 글자에 밑줄
+        // $('#demo .inner').css('text-decoration', 'underline')
+
+        // 아래쪽에 5px 두께의 빨강 실선
+        // $('#demo .inner').css('border-bottom', '5px solid red')
+
+        // 기울이기
+        // $('#demo .inner').css('transform', 'rotate(45 deg)')
+
+        // 투명도
+        // $('#demo .inner').css('opacity', '0.5')
+
+        // 여러 효과 적용(객체 이용)
+        /*$('#demo .inner').css({
+            'text-decoration': 'underline',
+            'border-bottom': '5px solid red',
+            'transform': 'rotate(45deg)',
+            'opacity': .3
+        })*/
+
+        // $('선택자').on('이벤트', 함수)
+        /*$('#demo').on('mouseover', () => $('.inner').css('background', 'green'))
+            .on('mouseout', () => $(".inner").css('background', 'white').html('글자 변경'))*/
+    })
+    // 여러 선택자에 이벤트 추가
+    /*$('#demo, h2, div').mouseover(function () {
+        $(this).css('background', 'yellow').html('daebo 2nd')
+    })*/
+</script>
+</body>
+
+</html>
