@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>구조분해할당</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!--<script type="text/javascript" src="../js/main8.js" defer></script>-->
+    <script type="text/javascript">
+        let a, b, rest
+        /*a = 10
+        b = 20*/
+        [a, b] = [10, 20]
+        document.writeln(a + "<br>")
+        console.log(a)
+        document.writeln(b + "<br>")
+        console.log(b);
+
+        [a, b, ...rest] = [1, 2, 3, 4, 5]   // 직전에 ; 필수
+        document.writeln(rest + "<br>")   // Array [3, 4, 5]
+        console.log(rest)
+        document.writeln("<hr>")
+
+        const numbers = [1, 2, 3, 4]
+        let fruits = ['사과', '바나나', '토마토']
+        fruits.forEach((value, index, array) => document.writeln(`${value}, [${index}], [${array}]<br>`))
+        document.writeln("<hr>")
+
+        const x = fruits.map((fruit, i) => {
+            document.writeln(`${fruit} - ${i}<br>`)
+            // return `${fruit} - ${i}`
+            return {
+                id: i,
+                name: fruit
+            }
+        })
+        document.writeln(`x=${x}<hr>`)
+
+        let newLength = fruits.push('오렌지')
+        document.writeln(`${fruits}<br>`)
+        document.writeln(`${newLength}<hr>`)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

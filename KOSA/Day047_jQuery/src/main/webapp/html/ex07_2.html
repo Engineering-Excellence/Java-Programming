@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ex07_2.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!--<script type="text/javascript" defer>
+        var person = {
+            name: "홍길동",
+            phone: "010-9872-0202",
+            addr: "서울 서대문구 연희동",
+
+            info: function () {
+                alert("name : " + this.name + "\n"
+                    + "phone : " + this.phone + "\n"
+                    + "addr : " + this.addr
+                );
+
+                var list = '';
+                for (var key in this) {
+                    list += (key + " : " + this[key] + "\n")
+                } // for end
+
+                alert(list);
+            } // info end
+        };
+
+        person.info();
+    </script>-->
+
+    <!--
+    <script type="text/javascript" defer>
+       var person = {
+             name: "홍길동",
+             phone: "010-9872-0202",
+             addr: "서울 서대문구 연희동",
+
+             info : function() {
+                var list = '';
+
+                /* list += "name : " + this.name + "\n";
+                list += "phone : " + this.phone + "\n";
+                list += "addr : " + this.addr  */
+
+                with(this) {
+                   list += "name : " + name + "\n";
+                   list += "phone : " + phone + "\n";
+                   list += "addr : " + addr
+                }
+
+                alert(list);
+             } // info end
+       };
+       person.info();
+    </script>
+     -->
+
+    <script type="text/javascript" defer>
+        function makePerson(name, phone, addr) {
+
+            var person = {
+                name: name,
+                phone: phone,
+                addr: addr,
+
+                info: function () {
+                    var list = '';
+                    for (var key in this) {
+                        if (key != 'info') {
+                            list += key + " : " + this[key] + "\n";
+                        }
+                    }// for end
+
+                    alert(list);
+                }// info method end
+            };
+            return person;
+        } // makePerson(name, phone, addr) end
+
+        /* var p = makePerson("강감찬", "0000", "서울시");
+        var p2 =makePerson("전두환", "8888", "경기");
+
+        var person = [p, p2];   // var 배열명 = [값1, 값2,...];
+        person[0].info();
+        person[1].info(); */
+
+        var person = [];
+        person.push(makePerson("happy", "9999", "seoul"));
+        person.push(makePerson("kingsmile", "8888", "busan"));
+
+        for (var i in person) {
+            person[i].info();
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
