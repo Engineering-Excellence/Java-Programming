@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ajax.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+            integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" defer>
+        // $(document).ready(function () {
+        $(() => {
+            $('#driver').click(() => $('#stage').load('hello.html'))
+        })
+    </script>
+</head>
+
+<body>
+<p>버튼 클릭시 이곳에 jQuery AJAX 실행됨</p>
+<div id="stage" style="background-color: #CCCC00">STAGE</div>
+<input type="button" name="driver" id="driver" value="Load Data"><br>
+<img src="../../images/house.png" alt="house">
+</body>
+
+</html>
