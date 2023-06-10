@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@CHARSET "UTF-8";
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  display: grid;
+  grid-template-areas: "header header" "nav main";
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 3fr;
+  gap: 1.8vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*header*/
+header {
+  grid-area: header;
+  height: 40vh;
+  padding: 1vw;
+  text-align: center;
+}
+header .rabbit {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f5ef;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s;
+  justify-content: center;
+}
+header .rabbit .hide {
+  height: 0;
+}
+header .rabbit .swiper-container {
+  width: 100%;
+  position: relative;
+  left: 5%;
+  overflow: hidden;
+  flex-basis: 90%;
+}
+header .rabbit .swiper-container .swiper-wrapper {
+  vertical-align: center;
+}
+header .rabbit .swiper-container .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 40vh;
+}
+header .rabbit .swiper-container .swiper-wrapper .swiper-slide img {
+  height: 40vh;
+}
+header .rabbit .swiper-container .swiper-wrapper .swiper-slide .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+header .rabbit .swiper-slide-active {
+  opacity: 1;
+}
+header .rabbit .swiper-prev, header .rabbit .swiper-next {
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  /* Swiper Container 높이의 절반만큼 끌어올림 */
+  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  flex-basis: 5%;
+}
+header .rabbit .swiper-prev {
+  left: 2%;
+}
+header .rabbit .swiper-next {
+  right: 2%;
+}
+header .rabbit .swiper-prev:hover, header .rabbit .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+nav {
+  grid-area: nav;
+  border: 1px solid black;
+  padding: 1vw;
+  position: relative;
+  left: 65%;
+}
+nav .image-container {
+  max-width: 100%;
+}
+nav .image-container .image-wrapper .image-img img {
+  width: 100%;
+}
+
+main {
+  grid-area: main;
+  border: 1px solid black;
+  padding: 1vw;
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+main .main-image-container {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+main .main-image-container .main-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+main .main-image-container .main-image-wrapper .main-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+main .main-image-container .main-image-wrapper .main-image img {
+  height: 100vh;
+}
+
+/*# sourceMappingURL=assignment.css.map */
