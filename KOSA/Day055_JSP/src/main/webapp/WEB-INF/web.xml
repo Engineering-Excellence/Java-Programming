@@ -5,6 +5,16 @@
          version="6.0">
     <display-name>Day055_JSP</display-name>
 
+    <!-- Error 처리: 404, 500 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/Error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/Error500.jsp</location>
+    </error-page>
+
     <!-- application 객체를 이용해서 web에 초기화 내용 읽기 -->
     <context-param>
         <description>기본적인 설명</description>
