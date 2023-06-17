@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%--<%@ include file="../module/SubInclude.jsp" %>--%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ex04_page.jsp</title>
+    <title>ex08_include.jsp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -19,27 +20,18 @@
 </head>
 
 <body>
-<h2>page: import & out object & buffer</h2>
+<!-- 해당 파일로 이동했다가 귀환 -->
+<jsp:include page="../module/SubInclude.jsp"/>
 <%
-    boolean flag = true;
-    if (10 > 5) {
+    int num = 200;  // Error: (include 된 페이지에 이미 선언 됨)
 %>
-값은: <font color="blue"><%=flag%>
-</font>
+ㅇㅇ
+<h3>Include File Data</h3>
+SubInclude File Data: <%=num%><br>
 <%
-} else {
-    flag = false;
+    num = 900;
 %>
-값은: <font color="red"><%=flag%>
-</font>
-<%
-    }
-%>
-<hr>
-<h3>buffer 관련 메서드(out 객체를 통해)</h3>
-버퍼: <%=out.getBufferSize()%><br>
-남은 크기: <%=out.getRemaining()%><br>
-버퍼 설정 정보: <%=out.isAutoFlush()%>
+Changed Data: <%=num%><br>
 </body>
 
 </html>

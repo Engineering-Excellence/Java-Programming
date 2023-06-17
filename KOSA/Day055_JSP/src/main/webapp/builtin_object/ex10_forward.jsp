@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ex04_page.jsp</title>
+    <title>ex10_forward.jsp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -19,27 +19,13 @@
 </head>
 
 <body>
-<h2>page: import & out object & buffer</h2>
-<%
-    boolean flag = true;
-    if (10 > 5) {
-%>
-값은: <font color="blue"><%=flag%>
-</font>
-<%
-} else {
-    flag = false;
-%>
-값은: <font color="red"><%=flag%>
-</font>
-<%
-    }
-%>
+사용 목적: 조건에 맞는 페이지를 사용자에게 전달<br>
+장점: 사용자(Client)가 주소가 바뀌었는지 모른다.<br>
+(사용자가 바라보는 주소는 동일하다.)
 <hr>
-<h3>buffer 관련 메서드(out 객체를 통해)</h3>
-버퍼: <%=out.getBufferSize()%><br>
-남은 크기: <%=out.getRemaining()%><br>
-버퍼 설정 정보: <%=out.isAutoFlush()%>
+<font color="red">Site Top Content</font>
+<jsp:forward page="../module/SubForward.jsp"/>
+<font color="blue">Site Bottom Content</font>
 </body>
 
 </html>
