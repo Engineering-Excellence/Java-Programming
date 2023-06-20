@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.visitors.BookVO">
+    <select id="getPageCount" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM GUESTBOOK
+    </select>
+
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.kosta.visitors.BookVO">
+        <![CDATA[
+        SELECT NAME, EMAIL, HOME, CONTENTS
+        FROM GUESTBOOK
+        WHERE NUM >= 1
+          AND NUM <= 23
+        ORDER BY NUM DESC
+        ]]>
+    </select>
+</mapper>
