@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.kosa.model.MemberVO">
+    <select id="confirmID" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT ID
+        FROM MEMBERS
+        WHERE ID = #{id}
+    </select>
+
+    <select id="getMember" parameterType="java.lang.String" resultType="edu.kosa.model.MemberVO">
+        SELECT *
+        FROM MEMBERS
+        WHERE ID = #{id}
+    </select>
+
+    <select id="selectAll" resultType="edu.kosa.model.MemberVO">
+
+    </select>
+
+    <insert id="insert" parameterType="edu.kosa.model.MemberVO">
+        INSERT INTO MEMBERS (ID, PASSWD, NAME, JUMIN1, JUMIN2, EMAIL, BLOG)
+        VALUES (#{id}, #{passwd}, #{name}, #{jumin1}, #{jumin2}, #{email}, #{blog})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.String">
+
+    </delete>
+
+    <update id="update" parameterType="edu.kosa.model.MemberVO">
+        UPDATE MEMBERS
+        SET PASSWD = #{PASSWD},
+            EMAIL  = #{EMAIL},
+            BLOG   = #{BLOG}
+        WHERE ID = #{ID}
+    </update>
+
+    <select id="userCheck" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT PASSWD
+        FROM MEMBERS
+        WHERE ID = #{id}
+    </select>
+</mapper>
