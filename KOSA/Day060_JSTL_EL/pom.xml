@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>kr.or.sw</groupId>
-    <artifactId>Day059_Quiz</artifactId>
+    <artifactId>Day060_JSTL_EL</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Day059_Quiz</name>
+    <name>Day060_JSTL_EL</name>
     <packaging>war</packaging>
 
     <properties>
@@ -42,16 +42,37 @@
             <version>2.2</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
             <version>3.0.1-b04</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-spec</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-jstlel</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-compat</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
         <!-- Tomcat -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -69,7 +90,6 @@
             <version>9.0.76</version>
         </dependency>
 
-
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -83,6 +103,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <!-- ORACLE -->
         <!--<dependency>
             <groupId>com.oracle.database.jdbc</groupId>
@@ -96,6 +117,11 @@
         </dependency>
 
         <!-- MyBatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>3.0.0</version>
+        </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
