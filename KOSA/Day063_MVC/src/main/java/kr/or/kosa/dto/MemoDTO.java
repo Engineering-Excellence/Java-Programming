@@ -1,17 +1,14 @@
-package kr.or.sw.model;
+package kr.or.kosa.dto;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
-public class GiftVO {
+public class MemoDTO {
 
-    private long gNo;
-    private String gName;
-    private long gStart;
-    private long gEnd;
+    private String id, email, content;
 }

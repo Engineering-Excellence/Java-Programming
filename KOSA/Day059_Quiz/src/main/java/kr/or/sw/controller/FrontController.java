@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-@WebServlet(name = "gift", value = "/gift/*")
+@WebServlet(name = "Gift", value = "/gift/*")
 public class FrontController extends HttpServlet {
 
     private static final long serialVersionUID = -1847552111947512469L;
 
-    private GiftService giftService;
+    private GiftService giftService = GiftServiceImpl.getInstance();
 
     private static final String REDIRECT_PATH = "/index.jsp?redirect=true";
     private static final String VIEW_PATH = "/WEB-INF/views/giftOK.jsp";
@@ -41,7 +41,6 @@ public class FrontController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("doPost()");
 
-        giftService = GiftServiceImpl.getInstance();
         String pathInfo = request.getPathInfo();
         switch (pathInfo) {
             case "/register":
