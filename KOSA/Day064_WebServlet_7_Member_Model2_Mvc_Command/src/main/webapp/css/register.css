@@ -1,0 +1,24 @@
+textarea {
+  resize: none;
+}
+
+table {
+  width: 100%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border: 1px;
+  border-spacing: 20px;
+  padding: 5px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+}
+
+th:nth-child(even) {
+  background-color: #DDDDDD;
+}
+
+/*# sourceMappingURL=register.css.map */
