@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--<bean id="dto" class="ex05.di.dto.MemberDTO">
+        <constructor-arg name="name" value="Kyle"/>
+        <constructor-arg name="age" value="99"/>
+        <constructor-arg name="msg" value="Hello, world!"/>
+    </bean>
+    <bean id="dao" class="ex05.di.dao.MemberDAOImpl">
+        <property name="memberDTO" ref="dto"/>
+    </bean>-->
+
+    <bean id="dto" class="ex05.di.dto.MemberDTO" c:name="Kaiser" c:age="20" c:msg="TF"/>
+    <bean id="dao" class="ex05.di.dao.MemberDAOImpl" p:memberDTO-ref="dto"/>
+</beans>
