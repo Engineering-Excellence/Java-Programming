@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="employee" class="ex03.di.EmployeePersonImpl" c:name="Kyle" c:age="99" c:gender="male" c:hobbies-ref="hobbies"/>
+    <bean id="hobbies" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <bean class="java.lang.String" c:value="독서"/>
+                <bean class="java.lang.String" c:value="영화"/>
+                <bean class="java.lang.String" c:value="수면"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
