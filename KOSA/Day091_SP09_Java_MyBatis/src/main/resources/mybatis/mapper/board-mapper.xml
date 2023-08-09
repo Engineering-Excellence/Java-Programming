@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.kosa.controller.BoardDAO">
+    <select id="selectOne" parameterType="_int" resultType="edu.kosa.model.BoardVO">
+        SELECT *
+        FROM MYBATISBOARD
+        WHERE SEQ = #{seq}
+    </select>
+
+    <select id="selectAll" resultType="edu.kosa.model.BoardVO">
+        SELECT *
+        FROM MYBATISBOARD
+        ORDER BY SEQ DESC
+    </select>
+
+    <insert id="insert" parameterType="edu.kosa.model.BoardVO">
+        INSERT INTO MYBATISBOARD (SEQ, TITLE, WRITER, CONTENT, REGDATE, READCOUNT)
+        VALUES (BOARD_SEQ.nextval, #{title}, #{writer}, #{content}, SYSDATE, 0)
+    </insert>
+
+    <update id="update" parameterType="edu.kosa.model.BoardVO">
+        UPDATE MYBATISBOARD
+        SET TITLE   = #{title},
+            WRITER  = #{writer},
+            CONTENT = #{content}
+        WHERE SEQ = #{seq}
+    </update>
+
+    <delete id="delete" parameterType="_int">
+        DELETE
+        FROM MYBATISBOARD
+        WHERE SEQ = #{seq}
+    </delete>
+</mapper>
