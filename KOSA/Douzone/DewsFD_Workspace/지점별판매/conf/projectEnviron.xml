@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Environment>
+  <server>
+    <url>http://localhost:8080</url>
+  </server>
+  <serverdbsearch>
+    <url>http://localhost:8080</url>
+  </serverdbsearch>
+  <module>
+    <name>CI</name>
+    <desc>그룹정보관리</desc>
+  </module>
+  <BaseInfo>
+    <UID>19bcaf67-0624-4e73-822c-3a4596a56032</UID>
+  </BaseInfo>
+  <variables />
+  <outputs />
+</Environment>

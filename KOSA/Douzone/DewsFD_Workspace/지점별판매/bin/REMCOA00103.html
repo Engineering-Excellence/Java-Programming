@@ -1,0 +1,112 @@
+<!--##7f2abd65-3806-4962-bc1b-2884098037d7##-->
+<!--##REMCOA00103##-->
+<!--##V6OzrT3/Ja/tF100pKxNLYWDkb7GuOp79WXp4xtoUzA=##-->
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: REMCOA00103
+  # PageTitle: 지점별판매
+  # Server: http://localhost:8080/
+-->
+<!--
+
+-->
+
+<div id="grid1" class="dews-ui-grid"></div>
+
+<style>
+    
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.version = self.version || {};
+    self.version.view='1.0';
+
+
+    
+    
+    self.ds1 = dews.ui.dataSource('ds1', {
+      grid: true,
+      schema: {
+        model: {
+          fields: [
+            { field: '지점', editable: false, dataType: 'string' }, 
+            { field: '월', editable: false, dataType: 'string' }, 
+            { field: '일', editable: false, dataType: 'string' }, 
+            { field: '에어컨', editable: false, dataType: 'number' }, 
+            { field: '선풍기', editable: false, dataType: 'number' }
+          ]
+    
+        }
+      },
+      data: [
+      {
+        "지점": "서울",
+        "월": "202301",
+        "일": "20230101",
+        "에어컨": "99",
+        "선풍기": "100"
+      },
+      {
+        "지점": "부산",
+        "월": "202308",
+        "일": "20230825",
+        "에어컨": "128",
+        "선풍기": "255"
+      }
+    ]
+    });
+    
+    
+    dews.ui.mainbuttons.localize.disable(true);
+    dews.ui.grid(self.$grid1, {
+      dataSource: self.ds1,
+      sortable: false,
+      autoBind: false,
+      checkable: false,
+      copyMode: 'cell',
+      columns: [
+        {
+          field: '지점',
+          title: '지점',
+          width: 60
+        },
+        {
+          field: '월',
+          title: '월',
+          width: 60
+        },
+        {
+          field: '일',
+          title: '일',
+          width: 60
+        },
+        {
+          field: '에어컨',
+          title: '에어컨',
+          width: 60
+        },
+        {
+          field: '선풍기',
+          title: '선풍기',
+          width: 60
+        }
+      ],
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      }
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

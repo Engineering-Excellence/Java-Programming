@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page title="카드리스트_정보수정" name="REMCOA00107" type="page">
+  <canvas uid="canvas-1485142915100" type="page" title="카드리스트_정보수정" component="" function="">
+    <pageInformation>
+      <version>1.0</version>
+      <create>edu09</create>
+      <builddate d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
+      <createdate>2023-08-25T17:32:22.1506509+09:00</createdate>
+      <modifieddate d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
+    </pageInformation>
+    <mainButtons uid="mainButtons-1385142915113">
+      <mainButton uid="mainButton-1485142971049" id="information" buttonAttr="normal" type="information" />
+      <mainButton uid="mainButton-1485142971050" id="localize" buttonAttr="disabled" type="localize" />
+      <mainButton uid="mainButton-1485142971051" id="approval" buttonAttr="normal" type="approval" />
+      <mainButton uid="mainButton-1485142971058" id="etn-approval" buttonAttr="normal" type="etn-approval" />
+      <mainButton uid="mainButton-1485142971052" id="add" buttonAttr="normal" type="add" />
+      <mainButton uid="mainButton-1485142971053" id="search" buttonAttr="normal" type="search" />
+      <mainButton uid="mainButton-1485142971054" id="delete" buttonAttr="normal" type="delete" />
+      <mainButton uid="mainButton-1485142971055" id="print" buttonAttr="normal" type="print" />
+      <mainButton uid="mainButton-1485142971056" id="save" buttonAttr="normal" type="save" />
+      <mainButton uid="mainButton-1485142971057" id="configure" buttonAttr="normal" type="configure" />
+    </mainButtons>
+    <conditionPanel uid="conditionPanel-ee22628f" id="conditionpanel1" margin="false" optional="false" optionalcollapsed="true" columnLength="3" labelAlign="right">
+      <conditionGroup uid="conditionGroup-2d43c380" type="required">
+        <conditionItem uid="conditionItem-a6996bc3" columnSize="1" text="라벨" state="basic">
+          <codepicker uid="codepicker-77687bcf" id="cdp1" disabled="false" readonly="false" state="basic" helpCustom="false" helpSize="medium" useKeyword="true" clearKeyword="false" ajax="true" width_type="px">
+            <mapping />
+          </codepicker>
+        </conditionItem>
+      </conditionGroup>
+    </conditionPanel>
+    <containerPanel uid="containerPanel-15683289" id="containerpanel1" height_type="px" containerResize="false">
+      <containerItem uid="containerItem-64e27768" id="containerpanelitem1" width_type="px" width="298" location="left">
+        <cardlist uid="cardlist-35def788" id="card1" dataSource="ds1" height_type="px" autoBind="true" headerCheck="false" cardStyle="default" totalcountType="Boolean" useTotalCount="false">
+          <totalCountObject />
+          <filter searchColumnSetType="String" useSearchFilter="false">
+            <searchColumnSetArray />
+          </filter>
+        </cardlist>
+      </containerItem>
+      <containerItem uid="containerItem-5a13b528" id="containerpanelitem2" width_type="px" width="" location="normal">
+        <formPanel uid="formPanel-2cc1ce2a" id="formpanel1" columnLength="2" labelAlign="right">
+          <formGroup uid="formGroup-a77c409f">
+            <formItem uid="formItem-7ad1f36b" columnSize="1" text="부서" state="basic">
+              <textbox uid="textbox-ab9216f6" id="txt1" disabled="false" readonly="false" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+          </formGroup>
+          <formGroup uid="formGroup-19bb5afa">
+            <formItem uid="formItem-67cb4c12" columnSize="1" text="사원번호" state="basic">
+              <textbox uid="textbox-5608427f" id="txt2" disabled="false" readonly="false" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+            <formItem uid="formItem-a394c920" columnSize="1" text="사원명" state="basic">
+              <textbox uid="textbox-23eb13df" id="txt3" disabled="false" readonly="false" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+          </formGroup>
+        </formPanel>
+      </containerItem>
+      <containerItem uid="containerItem-5d793509" id="containerpanelitem3" width_type="px" location="normal" />
+    </containerPanel>
+  </canvas>
+  <dataSources>
+    <datasource uid="datasource-bf6bb88a82dc4a40bf6eb8cb7166d420" id="ds1" isTreeGrid="false" grid="false" aggregate="false" group="false" userGroup="false" type="dataservice" module="HR" service="DepEmpService" urlpattern="empreg_list" params_type="mapping" params="" preview_type="none" preview="" localdata="" url="" useGroup="false" isMultiPipe="false" pipeparam="" pipecolumn="" paging="false" pagingCount="500" error="" DSType="None" isPost="false">
+      <mapping>
+        <param parameter="dept_cd" applyType="constant" dataType="string" value="dept_cd" />
+      </mapping>
+      <columns>
+        <column field="COMPANY_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="회사코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="EMP_NO" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="사원번호" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="KOR_NM" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="사원명" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="DEPT_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="부서코드" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+  </dataSources>
+  <pageMarkDown><![CDATA[]]></pageMarkDown>
+  <pageCssStyle><![CDATA[]]></pageCssStyle>
+  <stylesheets />
+  <javascripts />
+  <settings />
+  <datas />
+</page>

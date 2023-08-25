@@ -1,0 +1,180 @@
+<!--##bb8554ff-6e78-434f-bfba-df037577088c##-->
+<!--##REMCOA00100##-->
+<!--##NklQdw7oX3Py/S3rUmkfxJ4rcKyjkcFcHx3N1aCR0Fo=##-->
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: REMCOA00100
+  # PageTitle: 채용
+  # Server: https://prddemo.comet.duzon.net/
+-->
+<!--
+
+-->
+
+<div id="condtionPanel" class="dews-ui-condition-panel">
+  <ul class="required-area">
+    <li>
+      <label class="dews-ui-multilingual">Label</label>
+      <span>
+        <select id="ddl1" name="ddl1" class="dews-ui-dropdownlist basic" data-dews-show-tooltip="true" data-dews-show-value-tooltip="true" data-dews-use-numkey="false"></select>
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">신청일자</label>
+      <span>
+        <span id="pp1" class="dews-ui-periodpicker basic"></span>
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">사업장</label>
+      <span>
+        <select id="mcdp1" name="mcdp1" class="dews-ui-multicodepicker" data-dews-help-code="H_MA_BIZAREA_MST_S" data-dews-code-field="BIZAREA_CD" data-dews-text-field="BIZAREA_NM" data-dews-help-custom="false" data-dews-help-size="medium" />
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">부서</label>
+      <span>
+        <select id="mcdp2" name="mcdp2" class="dews-ui-multicodepicker" data-dews-help-code="H_MA_DEPT_MST_S" data-dews-code-field="DEPT_CD" data-dews-text-field="DEPT_NM" data-dews-help-custom="false" data-dews-help-size="big" />
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">결재상태</label>
+      <span>
+        <select id="ddl2" name="ddl2" class="dews-ui-dropdownlist basic" data-dews-value-field="SYSDEF_CD" data-dews-text-field="SYSDEF_NM" data-dews-show-tooltip="true" data-dews-show-value-tooltip="true" data-dews-use-numkey="false"></select>
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">신청구분</label>
+      <span>
+        <select id="ddl3" name="ddl3" class="dews-ui-dropdownlist basic" data-dews-value-field="SYSDEF_CD" data-dews-text-field="SYSDEF_NM" data-dews-show-tooltip="true" data-dews-show-value-tooltip="true" data-dews-use-numkey="false"></select>
+      </span>
+    </li>
+    <li>
+      <label class="dews-ui-multilingual">검색어</label>
+      <span>
+        <input id="txt2" name="txt2" type="text" class="dews-ui-textbox" />
+      </span>
+    </li>
+  </ul>
+</div>
+<div class="dews-ui-container-panel" data-dews-fit-bottom="true">
+  <div class="dews-container-item" data-dews-position="left" data-dews-width="300px">
+    <div id="gridMaster1" class="dews-ui-grid"></div>
+  </div>
+  <div class="dews-container-item" data-dews-position="normal">
+    <div class="dews-ui-form-panel">
+      <ul>
+        <li>
+          <label>Label</label>
+          <span>
+            <input id="txt1" name="txt1" type="text" class="dews-ui-textbox basic" />
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="dews-ui-container-panel" data-dews-fit-bottom="true">
+      <div class="dews-container-item" data-dews-position="normal">
+        <div id="gridDetail1" class="dews-ui-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.version = self.version || {};
+    self.version.view='1.0';
+
+
+    
+    
+    dews.api.get(dews.url.getApiUrl('CM', 'CommonCodeDtlService', 'common_ci_codeDtl_list'),{
+      async: false,
+      data: {
+          end_dt: '',
+          foreign_yn: '',
+          field_cd_pipe: 'P01300',
+          module_cd: 'MA',
+          syscode_yn: '',
+          keyword: '',
+          base_yn: ''
+      }
+    }).done(function (data) {
+      var ar_P01300 = new Array();
+    
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].FIELD_CD == "P01300") { 
+          ar_P01300.push(data[i]); 
+    
+        }
+      }
+      self.pipeDataSource1_P01300 = dews.ui.dataSource('pipeDataSource1_P01300',  { data: ar_P01300 });
+      self.pipeDataSource1 = dews.ui.dataSource('pipeDataSource1', { data: data });
+      
+    });
+    dews.api.get(dews.url.getApiUrl('CM', 'CommonCodeDtlService', 'common_ci_codeDtl_list'),{
+      async: false,
+      data: {
+          end_dt: '',
+          foreign_yn: '',
+          field_cd_pipe: 'P00155',
+          module_cd: 'HR',
+          syscode_yn: '',
+          keyword: '',
+          base_yn: ''
+      }
+    }).done(function (data) {
+      var ar_P00155 = new Array();
+    
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].FIELD_CD == "P00155") { 
+          ar_P00155.push(data[i]); 
+    
+        }
+      }
+      self.pipeDataSource2_P00155 = dews.ui.dataSource('pipeDataSource2_P00155',  { data: ar_P00155 });
+      self.pipeDataSource2 = dews.ui.dataSource('pipeDataSource2', { data: data });
+      
+    });
+    
+    
+    dews.ui.mainbuttons.localize.disable(true);
+    self.ddl2.setDataSource(self.pipeDataSource1_P01300);
+    self.ddl3.setDataSource(self.pipeDataSource2_P00155);
+    dews.ui.grid(self.$gridMaster1, {
+      sortable: false,
+      autoBind: false,
+      checkable: false,
+      copyMode: 'cell',
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      }
+    });
+    dews.ui.grid(self.$gridDetail1, {
+      sortable: false,
+      autoBind: false,
+      checkable: false,
+      copyMode: 'cell',
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      }
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

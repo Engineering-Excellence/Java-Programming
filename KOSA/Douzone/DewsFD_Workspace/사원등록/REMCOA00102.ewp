@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page title="사원등록" name="REMCOA00102" type="page">
+  <canvas uid="canvas-1485142915100" type="page" title="사원등록" component="" function="">
+    <pageInformation>
+      <version>1.0</version>
+      <create>edu09</create>
+      <modify>edu09</modify>
+      <builddate>2023-08-25T10:49:40.2182477+09:00</builddate>
+      <createdate>2023-08-25T10:30:10.288688+09:00</createdate>
+      <modifieddate>2023-08-25T10:49:40.2182477+09:00</modifieddate>
+    </pageInformation>
+    <mainButtons uid="mainButtons-1385142915113">
+      <mainButton uid="mainButton-1485142971049" id="information" buttonAttr="normal" type="information" />
+      <mainButton uid="mainButton-1485142971050" id="localize" buttonAttr="disabled" type="localize" />
+      <mainButton uid="mainButton-1485142971051" id="approval" buttonAttr="normal" type="approval" />
+      <mainButton uid="mainButton-1485142971058" id="etn-approval" buttonAttr="normal" type="etn-approval" />
+      <mainButton uid="mainButton-1485142971052" id="add" buttonAttr="normal" type="add" />
+      <mainButton uid="mainButton-1485142971053" id="search" buttonAttr="normal" type="search" />
+      <mainButton uid="mainButton-1485142971054" id="delete" buttonAttr="normal" type="delete" />
+      <mainButton uid="mainButton-1485142971055" id="print" buttonAttr="normal" type="print" />
+      <mainButton uid="mainButton-1485142971056" id="save" buttonAttr="normal" type="save" />
+      <mainButton uid="mainButton-1485142971057" id="configure" buttonAttr="normal" type="configure" />
+    </mainButtons>
+    <conditionPanel uid="conditionPanel-6496d1c2" id="conditionpanel1" margin="false" optional="false" optionalcollapsed="true" columnLength="3" labelAlign="left">
+      <conditionGroup uid="conditionGroup-b537e08d" type="required">
+        <conditionItem uid="conditionItem-d7c8fb4c" columnSize="1" text="부서" state="basic">
+          <codepicker uid="codepicker-f8089278" id="cdp1" disabled="false" readonly="false" state="basic" helpCode="" helpCustom="false" helpSize="medium" useKeyword="true" clearKeyword="false" ajax="true" width_type="px">
+            <mapping />
+          </codepicker>
+        </conditionItem>
+      </conditionGroup>
+    </conditionPanel>
+    <containerPanel uid="containerPanel-297add5e" id="containerpanel1" height_type="px" fitBottom="true" containerResize="false">
+      <containerItem uid="containerItem-cbe30e23" id="containerpanelitem1" width_type="px" location="normal" />
+    </containerPanel>
+  </canvas>
+  <dataSources />
+  <pageMarkDown><![CDATA[]]></pageMarkDown>
+  <pageCssStyle><![CDATA[]]></pageCssStyle>
+  <stylesheets />
+  <javascripts />
+  <settings />
+  <datas />
+</page>

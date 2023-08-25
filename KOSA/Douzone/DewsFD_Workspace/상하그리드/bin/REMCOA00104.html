@@ -1,0 +1,239 @@
+<!--##0602467e-43e2-436c-b114-fed3046bc940##-->
+<!--##REMCOA00104##-->
+<!--##i/h2XQJHdggNU2us8geAqm3nK3bLskMBOVvajzN1GBs=##-->
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: REMCOA00104
+  # PageTitle: 상하그리드
+  # Server: http://localhost:8080/
+-->
+<!--
+
+-->
+
+<div id="conditionpanel1" class="dews-ui-condition-panel">
+  <ul class="required-area">
+    <li>
+      <label class="dews-ui-multilingual">부서</label>
+      <span>
+        <input type="text" id="dept_cd" name="dept_cd" class="dews-ui-codepicker basic" data-dews-help-code="H_MA_DEPT_MST_S" data-dews-code-field="DEPT_CD" data-dews-text-field="DEPT_NM" data-dews-help-title="부서 도움창" data-dews-help-custom="false" data-dews-help-size="medium" data-dews-ajax="true" />
+      </span>
+    </li>
+  </ul>
+</div>
+<div id="containerpanel1" class="dews-ui-container-panel">
+  <div id="containerpanelitem1" class="dews-container-item" data-dews-position="normal">
+    <h4 id="tit1" class="dews-ui-title">부서정보</h4>
+    <div id="grid1" class="dews-ui-grid"></div>
+    <div class="dews-button-group" style="text-align: right;">
+      <h4 id="tit2" class="dews-ui-title">사원정보</h4>
+      <button id="btn1" class="dews-ui-button">추가</button>
+      <button id="btn2" class="dews-ui-button">삭제</button>
+    </div>
+    <div id="containerpanel2" class="dews-ui-container-panel">
+      <div id="containerpanelitem2" class="dews-container-item" data-dews-position="normal">
+        <div id="grid2" class="dews-ui-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.version = self.version || {};
+    self.version.view='1.0';
+
+
+    
+    
+    self.ds1 = dews.ui.dataSource('ds1', {
+      grid: true,
+      transport: {
+        read: {
+          url: dews.url.getApiUrl('HR', 'DepEmpService', 'depreg_list'),
+          data: function () {
+            return {
+              dept_cd: ''
+            };
+          }
+        }
+      },
+      schema: {
+        model: {
+          fields: [
+            { field: 'COMPANY_CD', editable: false, dataType: 'string' }, 
+            { field: 'DEPT_CD', editable: false, dataType: 'string' }, 
+            { field: 'DEPT_START_DT', editable: false, dataType: 'string' }, 
+            { field: 'DEPT_NM', editable: false, dataType: 'string' }, 
+            { field: 'BIZAREA_CD', editable: false, dataType: 'string' }, 
+            { field: '_uid', editable: false, dataType: 'string' }
+          ]
+    
+        }
+      }
+    });
+    self.ds2 = dews.ui.dataSource('ds2', {
+      grid: true,
+      transport: {
+        read: {
+          url: dews.url.getApiUrl('HR', 'DepEmpService', 'empreg_list'),
+          data: function () {
+            return {
+              dept_cd: ''
+            };
+          }
+        }
+      },
+      schema: {
+        model: {
+          fields: [
+            { field: 'COMPANY_CD', editable: false, dataType: 'string' }, 
+            { field: 'EMP_NO', editable: false, dataType: 'string' }, 
+            { field: 'KOR_NM', editable: false, dataType: 'string' }, 
+            { field: 'DEPT_CD', editable: false, dataType: 'string' }
+          ]
+    
+        }
+      }
+    });
+    
+    
+    dews.ui.mainbuttons.localize.disable(true);
+    self.dept_cd.setHelpParams(function () {
+      return {
+        AUTH_BIZAREA: '',
+        AUTH_PC: '',
+        AUTH_DEPT: ''
+      };
+    });
+    dews.ui.grid(self.$grid1, {
+      dataSource: self.ds1,
+      height: 150,
+      editable: true,
+      sortable: false,
+      checkable: false,
+      copyMode: 'cell',
+      columns: [
+        {
+          field: 'COMPANY_CD',
+          title: '회사코드',
+          width: 80,
+          visible: false
+        },
+        {
+          field: 'DEPT_CD',
+          title: '부서코드',
+          width: 80,
+          attributes: { class: 'required' }
+        },
+        {
+          field: 'DEPT_START_DT',
+          title: '부서시작일',
+          width: 80,
+          visible: false,
+          formats: {
+            type: 'date',
+            format: 'yyyy-MM-dd'
+          },
+          editor: {
+            type: 'date',
+            format: 'yyyy-MM-dd'
+          }
+        },
+        {
+          field: 'DEPT_NM',
+          title: '부서명',
+          width: 90,
+          align: 'left'
+        },
+        {
+          field: 'BIZAREA_CD',
+          title: '사업장코드',
+          width: 80,
+          visible: false
+        },
+        {
+          field: '_uid',
+          title: '_uid',
+          width: 60,
+          visible: false
+        }
+      ],
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      }
+    });
+    self.$btn1.on('click', /*d3a3bd8e-e2d4-434d-9e6a-c0d74ae65af3*/ function (e) {
+        if (self.grid1.getRowState(self.grid1.select()) === 'added') {
+            dews.alert("부서 저장 후에 추가 가능합니다.");
+            return;
+        }
+        self.grid2.addRow();
+        self.grid2.setCellValue(self.grid2.select(), "DEPT_CD", self.grid1.getCellValue(self.grid1.select(), "DEPT_CD"));
+    });
+    
+    /**
+     * @Control : Button
+     * @Event : click
+     * @Control-ID : btn2
+     * @Warning : 주석라인 수정시 스크립트 저장에 문제가 발생할 수 있습니다.
+     */
+    self.$btn2.on('click', function (e) {
+        self.grid2.removeRow(self.grid2.select());
+    });
+    dews.ui.grid(self.$grid2, {
+      dataSource: self.ds2,
+      height: 150,
+      editable: true,
+      sortable: false,
+      checkable: false,
+      copyMode: 'cell',
+      columns: [
+        {
+          field: 'COMPANY_CD',
+          title: '회사코드',
+          width: 80,
+          visible: false
+        },
+        {
+          field: 'DEPT_CD',
+          title: '부서코드',
+          width: 80,
+          attributes: { class: 'readonly' }
+        },
+        {
+          field: 'EMP_NO',
+          title: '사원번호',
+          width: 60,
+          attributes: { class: 'required' }
+        },
+        {
+          field: 'KOR_NM',
+          title: '사원명',
+          width: 90,
+          align: 'left'
+        }
+      ],
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      }
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

@@ -1,0 +1,238 @@
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: 카드정보수정
+  # PageTitle: 카드정보수정
+  # Server: https://prd2.comet.duzon.net/
+-->
+
+<div id="searchCondition" class="dews-ui-condition-panel">
+  <ul class="required-area">
+    <li>
+      <label class="dews-ui-multilingual">부서</label>
+      <span>
+        <input type="text" id="_DEPT_CD" name="_DEPT_CD" class="dews-ui-codepicker required" data-dews-help-code="H_MA_DEPT_MST_S" data-dews-code-field="DEPT_CD" data-dews-text-field="DEPT_NM" data-dews-help-title="부서도움창" data-dews-help-custom="false" data-dews-help-size="big" data-dews-ajax="true" />
+      </span>
+    </li>
+  </ul>
+</div>
+<div class="dews-ui-container-panel" style="overflow: visible;" data-dews-fit-bottom="true">
+  <div class="dews-container-item" data-dews-position="left" data-dews-width="300">
+    <div id="cardlist1" class="dews-ui-cardlist"></div>
+  </div>
+  <div class="dews-container-item" data-dews-position="normal">
+    <div id="bindingForm" class="dews-ui-form-panel">
+      <ul>
+        <li>
+          <label>부서코드</label>
+          <span>
+            <input id="dept_cd" name="dept_cd" type="text" data-dews-bind-column="DEPT_CD" class="dews-ui-textbox basic" readonly="readonly" />
+          </span>
+        </li>
+        <li>
+          <label>사번</label>
+          <span>
+            <input id="EMP_NO" name="EMP_NO" type="text" class="dews-ui-textbox required" />
+          </span>
+        </li>
+        <li>
+          <label>사원명</label>
+          <span>
+            <input id="KOR_NM" name="KOR_NM" type="text" class="dews-ui-textbox basic" />
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+
+    /*a2bb4499-f318-4839-a355-0149593128d9*/ self._DEPT_CD.setData({
+      DEPT_CD: self.user.deptCode,
+      DEPT_NM: self.user.deptName
+    });
+    
+    // 폼패널안에 있는 폼컨트롤들 내용 삭제하는 함수
+    function clearFormPanel() {
+      // find() 선택된 태그(객체)의 모든 자식태그들 검색
+      $(self.$content.find(".dews-form-panel li input")).each(function (index, item) {
+        // 내용 초기화
+        self[item.id].text("");
+        // 사용여부 비활성화
+        self[item.id].enable(false);
+      });
+    }
+    
+    
+    self.dataSource1 = dews.ui.dataSource('dataSource1', {
+      transport: {
+        read: {
+          url: dews.url.getApiUrl('PS', 'ProjectSystemWbsService', 'emp_search_list'),
+          data: function () {
+            return {
+              dept_cd: self._DEPT_CD.code()
+            };
+          }
+        }
+      },
+      schema: {
+        model: {
+          id: 'EMP_NO',
+          fields: [
+            { field: 'DEPT_CD', editable: true, dataType: 'string' }, 
+            { field: 'EMP_NO', editable: true, dataType: 'string' }, 
+            { field: 'KOR_NM', editable: true, dataType: 'string' }
+          ]
+    
+        }
+      }
+    });
+    
+    
+    dews.ui.mainbuttons.information.disable(true);
+    dews.ui.mainbuttons.localize.disable(true);
+    dews.ui.mainbuttons.add.click(/*4fdb01b7-4bd1-4c3e-92d4-1d7ad29e6377*/ function() {
+      if (self.cardlist1.getRowState(self.cardlist1.select()) == "added") {
+        dews.alert("저장 후에 등록이 가능합니다", "warning");
+        return false;
+      } else {
+        // TODO: 그리드에 데이터를 추가합니다.
+        self.cardlist1.addRow();
+        self.dept_cd.text(self._DEPT_CD.code());
+        self.bindingForm.bindTo(self.cardlist1);
+      }
+    });
+    dews.ui.mainbuttons.search.click(/*df71d88e-ee6c-4507-acb3-3bc2839ce5f3*/ function() {
+    
+      // TODO: 필수항목 입력을 체크한 후 데이터소스를 조회합니다.
+      if (self.searchCondition.validate({ tooltip: true, message: '필수 항목을 입력해 주십시요.' })) {
+        // TODO: 저장여부를 확인한 후 데이터소스를 조회합니다.
+        if (self.dataSource1.getDirtyDataCount() != 0) {
+          dews.confirm('저장하지 않은 데이터가 있습니다.\n조회를 계속하시겠습니까?', 'ico2').yes(function () {
+            self.dataSource1.read();
+          }).no(function () {
+            dews.ui.snackbar.warning('취소되었습니다.');
+            return false;
+          });
+        } else {
+          self.dataSource1.read();
+        }
+      }
+    
+    
+    });
+    dews.ui.mainbuttons.delete.click(/*6bc4fec3-4d19-4249-a40b-e8dc851cbbe7*/ function() {
+      // TODO: 삭제시 강제 팝업에 대한 알림창을 끕니다.
+      // self.mainButtons.delete.useDefaultConfirm = false;
+    
+      // TODO: 그리드에서 체크된 항목을 삭제합니다.
+      // if (self.grid1.getCheckedIndex().length == 0) {
+      //   dews.alert('선택된 데이터가 없습니다.', 'warning');
+      //   return false;
+      // }
+      // self.grid1.removeRow(self.grid1.getCheckedIndex());
+    
+      // TODO: 그리드에 선택된 항목을 삭제합니다.
+      self.cardlist1.removeRow(self.cardlist1.select());
+      if (self.cardlist1.dataItems().length == 0) {
+        clearFormPanel();
+      }
+    });
+    dews.ui.mainbuttons.save.click(/*4d696b8d-fe04-4ba3-a54b-9d649686aa4a*/ function() {
+      // TODO: 데이터소스를 저장합니다.
+      if (self.dataSource1.getDirtyDataCount() == 0) {
+        dews.alert('변경된 데이터가 없습니다.');
+        return false;
+      }
+    
+      if (!self.bindingForm.validate({ tooltip: false })) {
+        dews.alert('필수 값이 입력되지 않은 항목이 있습니다.').done(function (dialog) {
+          dialog.on('closed', function () {
+            self.EMP_NO.focus();
+            return false;
+          });
+        });
+      } else {
+    
+    alert(2);
+      // 서비스 파라미터명과 데이터소스명이 다른경우
+      dews.confirm('수정된 데이터를 저장하시겠습니까 ? ', 'question').yes(function () {
+        dews.api.post(dews.url.getApiUrl('PS', 'ProjectSystemWbsService', 'emp_save'), {
+          async: false,
+          data: {
+            //ServiceParameterName : ServiceParameterValue
+            saveData: JSON.stringify(self.dataSource1.getDirtyData())
+          }
+        }).done(function (data) {
+          dews.ui.snackbar.ok('자료가 정상적으로 저장되었습니다.');
+          self.dataSource1.read();
+        }).fail(function (xhr, status, error) {
+          //dews.error('저장이 실패하였습니다.', 'ico1');
+          dews.ui.snackbar.error(error);
+        });
+      });
+      }
+    });
+    dews.ui.cardlist(self.$cardlist1, {
+      dataSource: self.dataSource1,
+      template: 
+        '<div class="dews-cardlist-template">' +
+        '	<div class="dews-cardlist-main-text">' +
+        '		<p class="bold">#: data.EMP_NO #</p>' +
+        '	</div>' +
+        '	<div class="dews-cardlist-sub-text">' +
+        '		<p>#: data.DEPT_CD#</p>' +
+        '	</div>' +
+        '	<div class="dews-cardlist-right-text">' +
+        '		<p style="float:right">#: data.KOR_NM #</p>' +
+        '	</div>' +
+        '</div>',
+      sort: [
+        { field: 'EMP_NO', title: '사번' },
+        { field: 'KOR_NM', title: '사원명' }
+      ]
+    });
+    self.cardlist1.on('change', /*38025a20-ec98-4527-9226-1010ce2bc574*/ function(e) {
+      // 카드리스트 데이터 유무
+      if (self.cardlist1.dataItems().length == 0) {
+        return;
+      }
+    
+      //bindPanel(panel) : 카드리스트의 해당 row에 맞는 데이터를 폼패널에 바인딩
+      self.cardlist1.bindPanel(self.bindingForm);
+    
+      if (self.cardlist1.getRowState(self.cardlist1.select()) == 'added') {
+        self.EMP_NO.enable(true);
+      }
+      else {
+        self.EMP_NO.enable(false);
+      }
+      self.KOR_NM.enable(true);
+    
+    });
+    self.cardlist1.on('dataBound', /*0d2527bf-729f-4ed6-8302-c76919abd13b*/ function(e) {
+      if (self.cardlist1.dataItems().length == 0) {
+        clearFormPanel();
+      }
+    });
+    self.bindingForm.on('change', /*271fbd66-b1dc-4ce1-bd6e-bd157aaf89a5*/ function(e) {
+      self.bindingForm.bindTo(self.cardlist1);
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

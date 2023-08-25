@@ -1,0 +1,66 @@
+<!--##339e4c1e-0748-4863-a4bd-fba8f9ee19c8##-->
+<!--##REMCOA00101##-->
+<!--##0xhgwX4emKgImDWMyKl5rzzId70XBos3xQgshxGebgE=##-->
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: REMCOA00101
+  # PageTitle: 사원조회
+  # Server: http://localhost:8080/
+-->
+<!--
+
+-->
+
+<div id="conditionpanel1" class="dews-ui-condition-panel" data-dews-label-align="left">
+  <ul class="required-area">
+    <li>
+      <label class="dews-ui-multilingual">부서</label>
+      <span>
+        <input type="text" id="cdp1" name="cdp1" class="dews-ui-codepicker basic" data-dews-help-code="H_HR_EMP_MST_S" data-dews-code-field="COMPANY_CD" data-dews-text-field="COMPANY_NM" data-dews-help-title="사원 도움창" data-dews-help-custom="false" data-dews-help-size="medium" data-dews-ajax="true" />
+      </span>
+    </li>
+  </ul>
+</div>
+<div id="containerpanel1" class="dews-ui-container-panel" data-dews-fit-bottom="true">
+  <div id="containerpanelitem1" class="dews-container-item" data-dews-position="normal"></div>
+</div>
+
+<style>
+    
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.version = self.version || {};
+    self.version.view='1.0';
+
+
+    
+    
+    
+    
+    dews.ui.mainbuttons.localize.disable(true);
+    self.cdp1.setHelpParams(function () {
+      return {
+        company_cd: '',
+        pc_cd: '',
+        auth_bizarea: '',
+        auth_dept: '',
+        decrypt_yn: '',
+        menu_cd: '',
+        cd_range_emp: ''
+      };
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page title="카드정보수정" name="card_Modify" type="page">
+  <canvas uid="canvas-1485142915100" type="page" title="카드정보수정" preReady="a2bb4499-f318-4839-a355-0149593128d9" component="" function="">
+    <pageInformation>
+      <version>1.0</version>
+      <create>kc20</create>
+      <modify>kc20</modify>
+      <builddate d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
+      <createdate>2021-05-06T13:46:47.6040244+09:00</createdate>
+      <modifieddate>2021-05-06T14:26:14.0702166+09:00</modifieddate>
+    </pageInformation>
+    <mainButtons uid="mainButtons-1385142915113">
+      <mainButton uid="mainButton-1485142971049" id="information" buttonAttr="disabled" type="information" />
+      <mainButton uid="mainButton-1485142971050" id="localize" buttonAttr="disabled" type="localize" />
+      <mainButton uid="mainButton-1485142971051" id="approval" buttonAttr="normal" type="approval" />
+      <mainButton uid="mainButton-1485142971058" id="etn-approval" buttonAttr="hide" type="etn-approval" />
+      <mainButton uid="mainButton-1485142971052" id="add" buttonAttr="normal" type="add" click="4fdb01b7-4bd1-4c3e-92d4-1d7ad29e6377" />
+      <mainButton uid="mainButton-1485142971053" id="search" buttonAttr="normal" type="search" click="df71d88e-ee6c-4507-acb3-3bc2839ce5f3" />
+      <mainButton uid="mainButton-1485142971054" id="delete" buttonAttr="normal" type="delete" click="6bc4fec3-4d19-4249-a40b-e8dc851cbbe7" />
+      <mainButton uid="mainButton-1485142971055" id="print" buttonAttr="normal" type="print" />
+      <mainButton uid="mainButton-1485142971056" id="save" buttonAttr="normal" type="save" click="4d696b8d-fe04-4ba3-a54b-9d649686aa4a" />
+      <mainButton uid="mainButton-1485142971057" id="configure" buttonAttr="normal" type="configure" />
+    </mainButtons>
+    <conditionPanel uid="conditionPanel-1571984694287" id="searchCondition" margin="false" optional="false" optionalcollapsed="true" columnLength="3" labelAlign="right">
+      <conditionGroup uid="conditionGroup-1571984694431" type="required">
+        <conditionItem uid="conditionItem-62df16d98cbf46b7b48274cb680b1e43" columnSize="1" text="부서">
+          <codepicker uid="codepicker-371d0a7c7b314d8bb33ba261f4343927" id="_DEPT_CD" disabled="false" readonly="false" state="required" helpCode="H_MA_DEPT_MST_S" codeField="DEPT_CD" textField="DEPT_NM" helpCustom="false" helpTitle="부서도움창" helpSize="big" useKeyword="true" clearKeyword="false" ajax="true" width_type="px">
+            <mapping />
+          </codepicker>
+        </conditionItem>
+      </conditionGroup>
+    </conditionPanel>
+    <containerPanel uid="containerPanel-1571984767011" height_type="px" fitBottom="true" containerResize="false">
+      <containerItem uid="containerItem-1571984767752" width_type="px" width="300" location="left">
+        <cardlist uid="cardlist-1571984817720" id="cardlist1" dataSource="dataSource1" height_type="px" autoBind="true" headerCheck="false" change="38025a20-ec98-4527-9226-1010ce2bc574" dataBound="0d2527bf-729f-4ed6-8302-c76919abd13b" cardStyle="default" totalcountType="Boolean" useTotalCount="false">
+          <template><![CDATA[<div class="dews-cardlist-template">
+	<div class="dews-cardlist-main-text">
+		<p class="bold">#: data.EMP_NO #</p>
+	</div>
+	<div class="dews-cardlist-sub-text">
+		<p>#: data.DEPT_CD#</p>
+	</div>
+	<div class="dews-cardlist-right-text">
+		<p style="float:right">#: data.KOR_NM #</p>
+	</div>
+</div>]]></template>
+          <css><![CDATA[]]></css>
+          <sort>
+            <sortitem field="EMP_NO" title="사번" />
+            <sortitem field="KOR_NM" title="사원명" />
+          </sort>
+          <totalCountObject />
+          <filter searchColumnSetType="String" useSearchFilter="false">
+            <searchColumnSetArray />
+          </filter>
+        </cardlist>
+      </containerItem>
+      <containerItem uid="containerItem-1571984793687" width_type="px" width="" location="normal">
+        <formPanel uid="formPanel-1571984827355" id="bindingForm" columnLength="2" labelAlign="right" change="271fbd66-b1dc-4ce1-bd6e-bd157aaf89a5">
+          <formGroup uid="formGroup-1571984827669">
+            <formItem uid="formItem-1571984846390" columnSize="1" text="부서코드">
+              <textbox uid="textbox-1571984846653" id="dept_cd" disabled="false" readonly="true" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" bindColumn="DEPT_CD" password="false" />
+            </formItem>
+            <formItem uid="formItem-1571984910223" columnSize="1" text="사번">
+              <textbox uid="textbox-1571984910604" id="EMP_NO" disabled="false" readonly="false" state="required" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+            <formItem uid="formItem-1571984956436" columnSize="1" text="사원명">
+              <textbox uid="textbox-1571984956773" id="KOR_NM" disabled="false" readonly="false" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+          </formGroup>
+        </formPanel>
+      </containerItem>
+    </containerPanel>
+  </canvas>
+  <dataSources>
+    <datasource uid="datasource-239a517f11b8458e92d7f8c7a5c5d6b8" id="dataSource1" isTreeGrid="false" grid="false" aggregate="false" group="false" userGroup="false" type="dataservice" module="PS" service="ProjectSystemWbsService" urlpattern="emp_search_list" params_type="mapping" params="" preview_type="none" preview="" localdata="" url="" useGroup="false" isMultiPipe="false" pipeparam="" pipecolumn="" paging="false" pagingCount="500" error="" DSType="None" isPost="false">
+      <mapping>
+        <param parameter="dept_cd" applyType="control" dataType="_DEPT_CD" value="code" />
+      </mapping>
+      <columns>
+        <column field="DEPT_CD" unionfield="" dataType="string" editable="true" useType="true" isID="false" isChildren="false" description="부서코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="EMP_NO" unionfield="" dataType="string" editable="true" useType="true" isID="true" isChildren="false" description="사번" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="KOR_NM" unionfield="" dataType="string" editable="true" useType="true" isID="false" isChildren="false" description="사원명" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+  </dataSources>
+  <pageMarkDown><![CDATA[]]></pageMarkDown>
+  <pageCssStyle><![CDATA[]]></pageCssStyle>
+  <stylesheets />
+  <javascripts>
+    <javascript id="38025a20-ec98-4527-9226-1010ce2bc574"><![CDATA[function(e) {
+  // 카드리스트 데이터 유무
+  if (self.cardlist1.dataItems().length == 0) {
+    return;
+  }
+
+  //bindPanel(panel) : 카드리스트의 해당 row에 맞는 데이터를 폼패널에 바인딩
+  self.cardlist1.bindPanel(self.bindingForm);
+
+  if (self.cardlist1.getRowState(self.cardlist1.select()) == 'added') {
+    self.EMP_NO.enable(true);
+  }
+  else {
+    self.EMP_NO.enable(false);
+  }
+  self.KOR_NM.enable(true);
+
+  if(cardSelect != '') {
+    $.each(self.cardlist1.dataItems(), function(idx, data){
+      if (data.EMP_NO == cardSelect) {
+        self.cardlist1.select(idx);
+      }
+    });
+  }
+
+  cardSelect = '';
+
+}]]></javascript>
+    <javascript id="271fbd66-b1dc-4ce1-bd6e-bd157aaf89a5"><![CDATA[function(e) {
+  self.bindingForm.bindTo(self.cardlist1);
+}]]></javascript>
+    <javascript id="a2bb4499-f318-4839-a355-0149593128d9"><![CDATA[self._DEPT_CD.setData({
+  DEPT_CD: self.user.deptCode,
+  DEPT_NM: self.user.deptName
+});
+
+// 폼패널안에 있는 폼컨트롤들 내용 삭제하는 함수
+function clearFormPanel() {
+  // find() 선택된 태그(객체)의 모든 자식태그들 검색
+  $(self.$content.find(".dews-form-panel li input")).each(function (index, item) {
+    // 내용 초기화
+    self[item.id].text("");
+    // 사용여부 비활성화
+    self[item.id].enable(false);
+  });
+}
+
+
+
+// 저장 및 조회 시 포커스 유지
+var cardSelect = '';]]></javascript>
+    <javascript id="4fdb01b7-4bd1-4c3e-92d4-1d7ad29e6377"><![CDATA[function() {
+  if (self.cardlist1.getRowState(self.cardlist1.select()) == "added") {
+    dews.alert("저장 후에 등록이 가능합니다", "warning");
+    return false;
+  } else {
+    // TODO: 그리드에 데이터를 추가합니다.
+    self.cardlist1.addRow();
+    self.dept_cd.text(self._DEPT_CD.code());
+    self.bindingForm.bindTo(self.cardlist1);
+  }
+}]]></javascript>
+    <javascript id="df71d88e-ee6c-4507-acb3-3bc2839ce5f3"><![CDATA[function() {
+
+  // TODO: 필수항목 입력을 체크한 후 데이터소스를 조회합니다.
+  if (self.searchCondition.validate({ tooltip: true, message: '필수 항목을 입력해 주십시요.' })) {
+    // TODO: 저장여부를 확인한 후 데이터소스를 조회합니다.
+    if (self.dataSource1.getDirtyDataCount() != 0) {
+      dews.confirm('저장하지 않은 데이터가 있습니다.\n조회를 계속하시겠습니까?', 'ico2').yes(function () {
+        self.dataSource1.read();
+      }).no(function () {
+        dews.ui.snackbar.warning('취소되었습니다.');
+        return false;
+      });
+    } else {
+      self.dataSource1.read();
+    }
+  }
+
+
+}]]></javascript>
+    <javascript id="0d2527bf-729f-4ed6-8302-c76919abd13b"><![CDATA[function(e) {
+  if (self.cardlist1.dataItems().length == 0) {
+    clearFormPanel();
+  }
+}]]></javascript>
+    <javascript id="6bc4fec3-4d19-4249-a40b-e8dc851cbbe7"><![CDATA[function() {
+  // TODO: 삭제시 강제 팝업에 대한 알림창을 끕니다.
+  // self.mainButtons.delete.useDefaultConfirm = false;
+
+  // TODO: 그리드에서 체크된 항목을 삭제합니다.
+  // if (self.grid1.getCheckedIndex().length == 0) {
+  //   dews.alert('선택된 데이터가 없습니다.', 'warning');
+  //   return false;
+  // }
+  // self.grid1.removeRow(self.grid1.getCheckedIndex());
+
+  // TODO: 그리드에 선택된 항목을 삭제합니다.
+  self.cardlist1.removeRow(self.cardlist1.select());
+  if (self.cardlist1.dataItems().length == 0) {
+    clearFormPanel();
+  }
+}]]></javascript>
+    <javascript id="4d696b8d-fe04-4ba3-a54b-9d649686aa4a"><![CDATA[function() {
+  // TODO: 데이터소스를 저장합니다.
+  if (self.dataSource1.getDirtyDataCount() == 0) {
+    dews.alert('변경된 데이터가 없습니다.');
+    return false;
+  }
+
+  if (!self.bindingForm.validate({ tooltip: false })) {
+    dews.alert('필수 값이 입력되지 않은 항목이 있습니다.').done(function (dialog) {
+      dialog.on('closed', function () {
+        self.EMP_NO.focus();
+        return false;
+      });
+    });
+  } else {
+
+      // 현재 선택된 아이템 ID
+   var selectedID = self.cardlist1.dataItems(self.cardlist1.select()).EMP_NO;
+
+    // 서비스 파라미터명과 데이터소스명이 다른경우
+    dews.confirm('수정된 데이터를 저장하시겠습니까 ? ', 'question').yes(function () {
+      dews.api.post(dews.url.getApiUrl('PS', 'ProjectSystemWbsService', 'emp_info_save'), {
+        async: false,
+        data: {
+          //ServiceParameterName : ServiceParameterValue
+          EMP_INFO: JSON.stringify(self.dataSource1.getDirtyData()),
+        }
+      }).done(function (data) {
+        
+
+        //cardSelect = selectedID;
+        
+        // 카드리스트 포커스 유지
+        self.cardlist1.keepRow();
+        dews.ui.snackbar.ok('자료가 정상적으로 저장되었습니다.');
+        self.dataSource1.read();
+      }).fail(function (xhr, status, error) {
+        //dews.error('저장이 실패하였습니다.', 'ico1');
+        dews.ui.snackbar.error(error);
+      });
+    });
+  }
+}]]></javascript>
+  </javascripts>
+  <settings />
+  <datas />
+</page>

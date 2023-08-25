@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page title="지점별판매" name="REMCOA00103" type="page">
+  <canvas uid="canvas-1485142915100" type="page" title="지점별판매" component="" function="">
+    <pageInformation>
+      <version>1.0</version>
+      <create>edu09</create>
+      <modify>edu09</modify>
+      <builddate>2023-08-25T14:25:30.4095644+09:00</builddate>
+      <createdate>2023-08-25T13:47:27.3498839+09:00</createdate>
+      <modifieddate>2023-08-25T14:25:30.4095644+09:00</modifieddate>
+    </pageInformation>
+    <mainButtons uid="mainButtons-1385142915113">
+      <mainButton uid="mainButton-1485142971049" id="information" buttonAttr="normal" type="information" />
+      <mainButton uid="mainButton-1485142971050" id="localize" buttonAttr="disabled" type="localize" />
+      <mainButton uid="mainButton-1485142971051" id="approval" buttonAttr="normal" type="approval" />
+      <mainButton uid="mainButton-1485142971058" id="etn-approval" buttonAttr="normal" type="etn-approval" />
+      <mainButton uid="mainButton-1485142971052" id="add" buttonAttr="normal" type="add" />
+      <mainButton uid="mainButton-1485142971053" id="search" buttonAttr="normal" type="search" />
+      <mainButton uid="mainButton-1485142971054" id="delete" buttonAttr="normal" type="delete" />
+      <mainButton uid="mainButton-1485142971055" id="print" buttonAttr="normal" type="print" />
+      <mainButton uid="mainButton-1485142971056" id="save" buttonAttr="normal" type="save" />
+      <mainButton uid="mainButton-1485142971057" id="configure" buttonAttr="normal" type="configure" />
+    </mainButtons>
+    <grid uid="grid-3967b32a" mockupData="" id="grid1" dataSource="ds1" height_type="px" editable="false" movable="false" rowNo="true" selectable="false" checkable="false" pasteAddRowEvent="false" sortable="false" shiftCheck="false" autoBind="false" requiredCheck="false" stateColumn="false" noData="false" noDataMessage="데이터가 없습니다" fillWidth="true" resizable="true" contextType="Boolean" context="false" contextex="true" skipEdit="false" copyMode="cell" multiFooterCnt="0" multiHeaderSummaryCnt="0" useGridUserGroup="false">
+      <columns>
+        <column field="지점" title="지점" width="60" align="center" editSkip="false" sortable="true" filter="true" visible="true" hideChildHeaders="false" mergeType="Boolean" merge="false" mergeString="" editingMergedRow="false" grouping="false" groupable="true" movable="true" showTooltip="false" attributes="none" footerType="object" headerType="object">
+          <mergeObject innerFocus="true" verticalTop="false" referenceFieldType="String" referenceField="">
+            <referenceFieldArray />
+          </mergeObject>
+          <headerCheck used="false" location="right" />
+          <footer predefined="false" currency_type="value" currency="" align="center">
+            <group predefined="false" />
+          </footer>
+          <footerCollection />
+          <headerSummary predefined="false" currency_type="value" currency="" align="center" />
+          <headerSummaryCollection />
+          <formats>
+            <DesignerControl />
+          </formats>
+          <editor>
+            <DesignerControl />
+          </editor>
+          <customExport check="" />
+        </column>
+        <column field="월" title="월" width="60" align="center" editSkip="false" sortable="true" filter="true" visible="true" hideChildHeaders="false" mergeType="Boolean" merge="false" mergeString="" editingMergedRow="false" grouping="false" groupable="true" movable="true" showTooltip="false" attributes="none" footerType="object" headerType="object">
+          <mergeObject innerFocus="true" verticalTop="false" referenceFieldType="String" referenceField="">
+            <referenceFieldArray />
+          </mergeObject>
+          <headerCheck used="false" location="right" />
+          <footer predefined="false" currency_type="value" currency="" align="center">
+            <group predefined="false" />
+          </footer>
+          <footerCollection />
+          <headerSummary predefined="false" currency_type="value" currency="" align="center" />
+          <headerSummaryCollection />
+          <formats>
+            <DesignerControl />
+          </formats>
+          <editor>
+            <DesignerControl />
+          </editor>
+          <customExport check="" />
+        </column>
+        <column field="일" title="일" width="60" align="center" editSkip="false" sortable="true" filter="true" visible="true" hideChildHeaders="false" mergeType="Boolean" merge="false" mergeString="" editingMergedRow="false" grouping="false" groupable="true" movable="true" showTooltip="false" attributes="none" footerType="object" headerType="object">
+          <mergeObject innerFocus="true" verticalTop="false" referenceFieldType="String" referenceField="">
+            <referenceFieldArray />
+          </mergeObject>
+          <headerCheck used="false" location="right" />
+          <footer predefined="false" currency_type="value" currency="" align="center">
+            <group predefined="false" />
+          </footer>
+          <footerCollection />
+          <headerSummary predefined="false" currency_type="value" currency="" align="center" />
+          <headerSummaryCollection />
+          <formats>
+            <DesignerControl />
+          </formats>
+          <editor>
+            <DesignerControl />
+          </editor>
+          <customExport check="" />
+        </column>
+        <column field="에어컨" title="에어컨" width="60" align="center" editSkip="false" sortable="true" filter="true" visible="true" hideChildHeaders="false" mergeType="Boolean" merge="false" mergeString="" editingMergedRow="false" grouping="false" groupable="true" movable="true" showTooltip="false" attributes="none" footerType="object" headerType="object">
+          <mergeObject innerFocus="true" verticalTop="false" referenceFieldType="String" referenceField="">
+            <referenceFieldArray />
+          </mergeObject>
+          <headerCheck used="false" location="right" />
+          <footer predefined="false" currency_type="value" currency="" align="center">
+            <group predefined="false" />
+          </footer>
+          <footerCollection />
+          <headerSummary predefined="false" currency_type="value" currency="" align="center" />
+          <headerSummaryCollection />
+          <formats>
+            <DesignerControl />
+          </formats>
+          <editor>
+            <DesignerControl />
+          </editor>
+          <customExport check="" />
+        </column>
+        <column field="선풍기" title="선풍기" width="60" align="center" editSkip="false" sortable="true" filter="true" visible="true" hideChildHeaders="false" mergeType="Boolean" merge="false" mergeString="" editingMergedRow="false" grouping="false" groupable="true" movable="true" showTooltip="false" attributes="none" footerType="object" headerType="object">
+          <mergeObject innerFocus="true" verticalTop="false" referenceFieldType="String" referenceField="">
+            <referenceFieldArray />
+          </mergeObject>
+          <headerCheck used="false" location="right" />
+          <footer predefined="false" currency_type="value" currency="" align="center">
+            <group predefined="false" />
+          </footer>
+          <footerCollection />
+          <headerSummary predefined="false" currency_type="value" currency="" align="center" />
+          <headerSummaryCollection />
+          <formats>
+            <DesignerControl />
+          </formats>
+          <editor>
+            <DesignerControl />
+          </editor>
+          <customExport check="" />
+        </column>
+      </columns>
+      <filter filterType="Boolean" filter="true" iconVisible="false" />
+      <contextObject excelDownload="true" fixed="true" search="true" excelDownloadExpandAll="true" excelFileNameSuffixDate="false" excelFileNameSuffixDateFormat="" />
+      <detailGrid addedRowDataSourceRead="true" />
+      <gridGroupColumns />
+      <fixed colCount="0" rightColCount="0" />
+      <styles heightTyp="string">
+        <rowNo />
+        <cellBorder />
+        <font bold="false" />
+        <padding />
+        <heightObject />
+      </styles>
+      <note>
+        <keys />
+      </note>
+    </grid>
+  </canvas>
+  <dataSources>
+    <datasource uid="datasource-28e96d0af3204a45b1101684368e26cd" id="ds1" isTreeGrid="false" grid="true" aggregate="false" group="false" userGroup="false" type="localdata" module="" service="" urlpattern="" params_type="none" params="" preview_type="none" preview="" localdata="c2db4913-98d0-439f-a631-af80b92ba555" url="" useGroup="false" isMultiPipe="false" pipeparam="" pipecolumn="" paging="false" pagingCount="500" error="" DSType="Grid" isPost="false">
+      <mapping />
+      <columns>
+        <column field="지점" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="월" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="일" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="에어컨" unionfield="" dataType="number" editable="false" useType="true" isID="false" isChildren="false" description="" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="선풍기" unionfield="" dataType="number" editable="false" useType="true" isID="false" isChildren="false" description="" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+  </dataSources>
+  <pageMarkDown><![CDATA[]]></pageMarkDown>
+  <pageCssStyle><![CDATA[]]></pageCssStyle>
+  <stylesheets />
+  <javascripts />
+  <settings />
+  <datas>
+    <data id="c2db4913-98d0-439f-a631-af80b92ba555" type="local"><![CDATA[[
+  {
+    "지점": "서울",
+    "월": "202301",
+    "일": "20230101",
+    "에어컨": "99",
+    "선풍기": "100"
+  },
+  {
+    "지점": "부산",
+    "월": "202308",
+    "일": "20230825",
+    "에어컨": "128",
+    "선풍기": "255"
+  }
+]]]></data>
+  </datas>
+</page>

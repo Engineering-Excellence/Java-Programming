@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.douzone.comet.service.ts.genQuery.dao.EmpfindDAO">
+
+	<select id="selectEmpfindModelList" resultType="com.douzone.comet.service.ts.genQuery.models.EmpfindModel">		
+		SELECT 
+			COMPANY_CD, 
+			DEPT_CD, 
+			EMP_NO, 
+			KOR_NM
+		FROM @{dzparam_dbname}HR_EMP_MST
+		WHERE (DEPT_CD = #{dept_cd} OR COALESCE(#{dept_cd}, ' ') = ' ')
+		AND COMPANY_CD = #{company_cd}
+		ORDER BY COMPANY_CD, KOR_NM		
+	</select>
+
+	<insert id="insertEmpfindModel">		
+		INSERT INTO @{dzparam_dbname}HR_EMP_MST (
+				COMPANY_CD,
+				DEPT_CD,
+				EMP_NO,
+				KOR_NM
+		) VALUES (
+				#{company_cd},
+				#{dept_cd},
+				#{emp_no},
+				#{kor_nm}
+		)		
+	</insert>
+
+	<update id="updateEmpfindModel" >		
+		UPDATE	@{dzparam_dbname}HR_EMP_MST
+		SET		COMPANY_CD = #{company_cd},
+				DEPT_CD = #{dept_cd},
+				EMP_NO = #{emp_no},
+				KOR_NM = #{kor_nm}
+		WHERE			
+	</update>
+
+	<delete id="deleteEmpfindModel">		
+		DELETE
+		FROM	@{dzparam_dbname}HR_EMP_MST
+		WHERE			
+	</delete>
+
+</mapper>

@@ -1,0 +1,148 @@
+<!--##ccdda4dd-565d-4438-903d-56365955bcd0##-->
+<!--##REMCOA00105##-->
+<!--##Elytwkg5AzXalmHg3uC3qHkF7EI2XhZtoRBQUms/nyQ=##-->
+<!--
+  DEWS UI/UX IDE - Build Result - v1.5
+  # PageID: REMCOA00105
+  # PageTitle: 2단그리드
+  # Server: http://localhost:8080/
+-->
+<!--
+
+-->
+
+<div id="conditionpanel1" class="dews-ui-condition-panel">
+  <ul class="required-area">
+    <li>
+      <label class="dews-ui-multilingual">부서</label>
+      <span>
+        <input type="text" id="cdp1" name="cdp1" class="dews-ui-codepicker basic" data-dews-help-custom="false" data-dews-help-size="medium" data-dews-ajax="true" />
+      </span>
+    </li>
+  </ul>
+</div>
+<div id="containerpanel1" class="dews-ui-container-panel">
+  <div id="containerpanelitem1" class="dews-container-item" data-dews-position="left" data-dews-width="291px">
+    <div id="grid1" class="dews-ui-grid"></div>
+  </div>
+  <div id="containerpanelitem2" class="dews-container-item" data-dews-position="normal">
+    <div id="formpanel1" class="dews-ui-form-panel">
+      <ul>
+        <li>
+          <label>부서코드</label>
+          <span>
+            <input id="txt2" name="txt2" type="text" data-dews-bind-column="DEPT_CD" class="dews-ui-textbox basic" />
+          </span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <label>사원번호</label>
+          <span>
+            <input id="txt4" name="txt4" type="text" class="dews-ui-textbox basic" />
+          </span>
+        </li>
+        <li>
+          <label>사원명</label>
+          <span>
+            <input id="txt6" name="txt6" type="text" class="dews-ui-textbox basic" />
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div id="formpanel2" class="dews-ui-form-panel"></div>
+  </div>
+</div>
+
+<style>
+    
+</style>
+
+
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.version = self.version || {};
+    self.version.view='1.0';
+
+
+    
+    
+    self.ds1 = dews.ui.dataSource('ds1', {
+      grid: true,
+      transport: {
+        read: {
+          url: dews.url.getApiUrl('HR', 'DepEmpService', 'empreg_list'),
+          data: function () {
+            return {
+              dept_cd: ''
+            };
+          }
+        }
+      },
+      schema: {
+        model: {
+          fields: [
+            { field: 'COMPANY_CD', editable: false, dataType: 'string' }, 
+            { field: 'EMP_NO', editable: false, dataType: 'string' }, 
+            { field: 'KOR_NM', editable: false, dataType: 'string' }, 
+            { field: 'DEPT_CD', editable: false, dataType: 'string' }
+          ]
+    
+        }
+      }
+    });
+    
+    
+    dews.ui.mainbuttons.localize.disable(true);
+    dews.ui.grid(self.$grid1, {
+      dataSource: self.ds1,
+      sortable: false,
+      autoBind: false,
+      checkable: false,
+      copyMode: 'cell',
+      columns: [
+        {
+          field: 'COMPANY_CD',
+          title: '회사코드',
+          width: 80,
+          visible: false
+        },
+        {
+          field: 'EMP_NO',
+          title: '사원번호',
+          width: 60
+        },
+        {
+          field: 'KOR_NM',
+          title: '사원명',
+          width: 90,
+          align: 'left'
+        },
+        {
+          field: 'DEPT_CD',
+          title: '부서코드',
+          width: 80,
+          visible: false
+        }
+      ],
+      fixed: {
+        colCount: 0,
+        rightColCount: 0
+      },
+      change: /*b364cc08-a666-44cc-bc82-1a6b3346f386*/ function (e) {
+            self.grid1.bindPanel(self.formpanel1);
+        }
+    
+    });
+    
+    
+    
+    
+    
+
+  
+  });
+
+</script>

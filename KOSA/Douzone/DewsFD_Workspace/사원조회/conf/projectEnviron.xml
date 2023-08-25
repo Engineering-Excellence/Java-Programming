@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Environment>
+  <server>
+    <url>http://localhost:8080</url>
+  </server>
+  <serverdbsearch>
+    <url>http://localhost:8080</url>
+  </serverdbsearch>
+  <module>
+    <name>HR</name>
+    <desc>인사관리</desc>
+  </module>
+  <BaseInfo>
+    <UID>68affa5e-64ba-4ba3-b0a7-5bc05825e9a3</UID>
+  </BaseInfo>
+  <variables />
+  <outputs />
+</Environment>

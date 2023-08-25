@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Environment>
+  <server>
+    <url>http://localhost:8080</url>
+  </server>
+  <serverdbsearch>
+    <url>http://localhost:8080</url>
+  </serverdbsearch>
+  <module>
+    <name>MA</name>
+    <desc>회사기준관리</desc>
+  </module>
+  <BaseInfo>
+    <UID>6a189a9b-8341-4faf-96ce-739fefd2cfd1</UID>
+  </BaseInfo>
+  <variables />
+  <outputs />
+</Environment>

@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.douzone.comet.service</groupId>
+	<artifactId>douzone-comet-service-hr-EmpSearch</artifactId>
+	<version>1.0.0.0</version>
+	<packaging>jar</packaging>
+	<name>EmpSearch</name>
+	<description></description> 
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- douzone gpd -->
+		<douzone.gpd.core.version>RELEASE</douzone.gpd.core.version>
+		<douzone.gpd.util.version>RELEASE</douzone.gpd.util.version>
+		<douzone.gpd.data.version>RELEASE</douzone.gpd.data.version>
+		<douzone.gpd.jdbc.version>RELEASE</douzone.gpd.jdbc.version>
+		<douzone.gpd.restful.version>RELEASE</douzone.gpd.restful.version>
+		<douzone.gpd.components.version>RELEASE</douzone.gpd.components.version>
+
+		<!-- douzone comet -->
+		<douzone.comet.components.version>RELEASE</douzone.comet.components.version>
+		<douzone.comet.service.util.version>RELEASE</douzone.comet.service.util.version>
+		<douzone.comet.util.version>RELEASE</douzone.comet.util.version>
+		<!-- Spring -->
+		<spring-framework.version>4.3.10.RELEASE</spring-framework.version>
+
+		<!-- junit -->
+		<junit.version>4.12</junit.version>
+
+		<servlet.version>3.1.0</servlet.version>
+
+		<!-- maven-eclipse-plugin -->
+		<maven.eclipse.plugin.version>2.9</maven.eclipse.plugin.version>
+
+		<!-- maven-compiler-plugin -->
+		<maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
+
+		<!-- exec-maven-plugin -->
+		<exec.maven.plugin.version>1.2.1</exec.maven.plugin.version>
+	</properties>
+	<!-- nexus down repo -->
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>comet2020-group</name>
+			<url>https://repo.comet.duzon.net/repository/comet2020-group/</url>
+		</repository>
+	</repositories>
+	<!-- nexus deploy repo -->
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Releases</name>
+			<url>https://repo.comet.duzon.net/repository/comet2020-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Snapshot</name>
+			<url>https://repo.comet.duzon.net/repository/comet2020-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<dependencies>
+		<!-- douzone gpd -->
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-core</artifactId>
+			<version>${douzone.gpd.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-util</artifactId>
+			<version>${douzone.gpd.util.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-data</artifactId>
+			<version>${douzone.gpd.data.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-jdbc</artifactId>
+			<version>${douzone.gpd.jdbc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-restful</artifactId>
+			<version>${douzone.gpd.restful.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.douzone.gpd.framework</groupId>
+			<artifactId>douzone-gpd-components</artifactId>
+			<version>${douzone.gpd.components.version}</version>
+		</dependency>
+		<!-- douzone comet -->
+		<dependency>
+			<groupId>com.douzone.comet</groupId>
+			<artifactId>douzone-comet-components</artifactId>
+			<version>${douzone.comet.components.version}</version>
+		</dependency>
+		 <dependency>
+            <groupId>com.douzone.comet</groupId>
+            <artifactId>douzone-comet-service-util</artifactId>
+            <version>${douzone.comet.service.util.version}</version>
+        </dependency>   
+		<dependency>
+			<groupId>com.douzone.comet</groupId>
+			<artifactId>douzone-comet-util</artifactId>
+			<version>${douzone.comet.util.version}</version>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-expression</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven.eclipse.plugin.version}</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${exec.maven.plugin.version}</version>
+				<configuration>
+					<mainClass>org.test.int1.Main</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

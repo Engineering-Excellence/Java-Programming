@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page title="채용" name="REMCOA00100" type="page">
+  <canvas uid="canvas-1485142915100" type="page" widgetContentType="widgetContent" title="채용" component="" function="">
+    <pageInformation>
+      <version>1.0</version>
+      <create>edu09</create>
+      <builddate d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
+      <createdate>2023-08-24T17:43:02.5226273+09:00</createdate>
+      <modifieddate d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
+    </pageInformation>
+    <mainButtons uid="mainButtons-1385142915113">
+      <mainButton uid="mainButton-1485142971049" id="information" buttonAttr="normal" type="information" />
+      <mainButton uid="mainButton-1485142971050" id="localize" buttonAttr="disabled" type="localize" />
+      <mainButton uid="mainButton-1485142971051" id="approval" buttonAttr="normal" type="approval" />
+      <mainButton uid="mainButton-1485142971058" id="etn-approval" buttonAttr="normal" type="etn-approval" />
+      <mainButton uid="mainButton-1485142971052" id="add" buttonAttr="normal" type="add" />
+      <mainButton uid="mainButton-1485142971053" id="search" buttonAttr="normal" type="search" />
+      <mainButton uid="mainButton-1485142971054" id="delete" buttonAttr="normal" type="delete" />
+      <mainButton uid="mainButton-1485142971055" id="print" buttonAttr="normal" type="print" />
+      <mainButton uid="mainButton-1485142971056" id="save" buttonAttr="normal" type="save" />
+      <mainButton uid="mainButton-1485142971057" id="configure" buttonAttr="normal" type="configure" />
+    </mainButtons>
+    <conditionPanel uid="conditionPanel-1559630969305" id="condtionPanel" margin="false" optional="false" optionalcollapsed="true" columnLength="3" labelAlign="right">
+      <conditionGroup uid="conditionGroup-1559630969431" type="required">
+        <conditionItem uid="conditionItem-1559630982034" columnSize="1" text="Label">
+          <dropdownlist uid="dropdownlist-1559630982134" id="ddl1" autoBind="true" pipeparam="" useDefault="false" defaultValue="" defaultText="" width_type="px" disabled="false" readonly="false" autoOpen="false" useNumkey="false" showTooltip="true" showValueTooltip="true" state="basic" />
+        </conditionItem>
+        <conditionItem uid="conditionItem-7f1436078bc84e90881cd401ea40275e" columnSize="1" text="신청일자">
+          <periodpicker uid="periodpicker-684275570988405a8e54e58c9e8d05ee" id="pp1" disabled="false" readonly="false" state="basic" startDate_type="value" endDate_type="value" predefined="false" buttons="true" width_type="px">
+            <designerComment>신청일자</designerComment>
+          </periodpicker>
+        </conditionItem>
+        <conditionItem uid="conditionItem-d702ba1e8552428489c70bf6dd512d1e" columnSize="1" text="사업장">
+          <multicodepicker uid="multicodepicker-5764e2e9423040f9a8dc8dda5013cd11" id="mcdp1" disabled="false" readonly="false" ajax="false" helpCode="H_MA_BIZAREA_MST_S" codeField="BIZAREA_CD" textField="BIZAREA_NM" virtualScroll="false" helpCustom="false" helpParams_type="mapping" helpSize="medium" width_type="px">
+            <designerComment>사업장</designerComment>
+            <mapping />
+          </multicodepicker>
+        </conditionItem>
+        <conditionItem uid="conditionItem-7dbe5c348113475d96921e4ea8088d73" columnSize="1" text="부서">
+          <multicodepicker uid="multicodepicker-7152f1b150ba4c68b46924017cfa0451" id="mcdp2" disabled="false" readonly="false" ajax="false" helpCode="H_MA_DEPT_MST_S" codeField="DEPT_CD" textField="DEPT_NM" virtualScroll="false" helpCustom="false" helpParams_type="mapping" helpSize="big" width_type="px">
+            <designerComment>부서</designerComment>
+            <mapping />
+          </multicodepicker>
+        </conditionItem>
+        <conditionItem uid="conditionItem-f5aecb8735424f688d0cc4a334f4379c" columnSize="1" text="결재상태">
+          <dropdownlist uid="dropdownlist-31702a7b16b84333bd7cf73b1fbbf1f0" id="ddl2" autoBind="true" dataSource="pipeDataSource1" valueField="SYSDEF_CD" textField="SYSDEF_NM" pipeparam="P01300" useDefault="false" defaultValue="" defaultText="" width_type="px" disabled="false" readonly="false" autoOpen="false" useNumkey="false" showTooltip="true" showValueTooltip="true" state="basic">
+            <designerComment>결재상태</designerComment>
+          </dropdownlist>
+        </conditionItem>
+        <conditionItem uid="conditionItem-1a543c6c21c241b780b80d0f1ba37943" columnSize="1" text="신청구분">
+          <dropdownlist uid="dropdownlist-a44a94590e9440529e8c5da075fd275a" id="ddl3" autoBind="true" dataSource="pipeDataSource2" valueField="SYSDEF_CD" textField="SYSDEF_NM" pipeparam="P00155" useDefault="false" defaultValue="" defaultText="" width_type="px" disabled="false" readonly="false" autoOpen="false" useNumkey="false" showTooltip="true" showValueTooltip="true" state="basic">
+            <designerComment>신청구분</designerComment>
+          </dropdownlist>
+        </conditionItem>
+        <conditionItem uid="conditionItem-8474e8859dc74d8f9b3af9913811a60a" columnSize="1" text="검색어">
+          <textbox uid="textBox-1728e2afeb4f4f6bac1a5b921d6abae2" id="txt2" disabled="false" readonly="false" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false">
+            <designerComment>검색어</designerComment>
+          </textbox>
+        </conditionItem>
+      </conditionGroup>
+    </conditionPanel>
+    <containerPanel uid="containerPanel-1559630970898" height_type="px" fitBottom="true" containerResize="false">
+      <containerItem uid="containerItem-1559630971376" width_type="px" width="300" location="left">
+        <grid uid="grid-1559631017746" id="gridMaster1" dataSource="" height_type="px" editable="false" movable="false" rowNo="true" selectable="false" checkable="false" pasteAddRowEvent="false" sortable="false" shiftCheck="false" autoBind="false" requiredCheck="false" stateColumn="false" noData="false" fillWidth="true" resizable="true" contextType="Boolean" context="false" contextex="true" skipEdit="false" copyMode="cell" multiFooterCnt="0" multiHeaderSummaryCnt="0" useGridUserGroup="false">
+          <columns />
+          <filter filterType="Boolean" filter="true" iconVisible="false" />
+          <contextObject excelDownload="true" fixed="true" search="true" excelDownloadExpandAll="true" excelFileNameSuffixDate="false" excelFileNameSuffixDateFormat="">
+            <gridContextItems />
+          </contextObject>
+          <detailGrid addedRowDataSourceRead="true" />
+          <gridGroupColumns />
+          <fixed colCount="0" rightColCount="0" />
+          <styles heightTyp="string">
+            <rowNo />
+            <cellBorder />
+            <font bold="false" />
+            <padding />
+            <heightObject />
+          </styles>
+          <note>
+            <keys />
+          </note>
+        </grid>
+      </containerItem>
+      <containerItem uid="containerItem-1559630994269" width_type="px" width="" location="normal">
+        <formPanel uid="formPanel-1564641274805" columnLength="2" labelAlign="right">
+          <formGroup uid="formGroup-1564641275065">
+            <formItem uid="formItem-1564641293653" columnSize="1" text="Label">
+              <textbox uid="textbox-1564641293910" id="txt1" disabled="false" readonly="false" state="basic" predefined="false" useSecureMask="false" multiline="false" width_type="px" height_type="px" rows="0" maxlength="0" password="false" />
+            </formItem>
+          </formGroup>
+        </formPanel>
+        <containerPanel uid="containerPanel-1564641296061" height_type="px" fitBottom="true" containerResize="false">
+          <containerItem uid="containerItem-1564641296476" width_type="px" location="normal">
+            <grid uid="grid-1564641303421" id="gridDetail1" dataSource="" height_type="px" editable="false" movable="false" rowNo="true" selectable="false" checkable="false" pasteAddRowEvent="false" sortable="false" shiftCheck="false" autoBind="false" requiredCheck="false" stateColumn="false" noData="false" fillWidth="true" resizable="true" contextType="Boolean" context="false" contextex="true" skipEdit="false" copyMode="cell" multiFooterCnt="0" multiHeaderSummaryCnt="0" useGridUserGroup="false">
+              <columns />
+              <filter filterType="Boolean" filter="true" iconVisible="false" />
+              <contextObject excelDownload="true" fixed="true" search="true" excelDownloadExpandAll="true" excelFileNameSuffixDate="false" excelFileNameSuffixDateFormat="">
+                <gridContextItems />
+              </contextObject>
+              <detailGrid addedRowDataSourceRead="true" />
+              <gridGroupColumns />
+              <fixed colCount="0" rightColCount="0" />
+              <styles heightTyp="string">
+                <rowNo />
+                <cellBorder />
+                <font bold="false" />
+                <padding />
+                <heightObject />
+              </styles>
+              <note>
+                <keys />
+              </note>
+            </grid>
+          </containerItem>
+        </containerPanel>
+      </containerItem>
+    </containerPanel>
+  </canvas>
+  <dataSources>
+    <datasource uid="datasource-4f067a87a29d4302aa36153824754ff4" id="pipeDataSource1" isTreeGrid="false" grid="false" aggregate="false" group="false" userGroup="false" type="dataservice" module="CM" service="CommonCodeDtlService" urlpattern="common_ci_codeDtl_list" params_type="mapping" params="" preview_type="none" preview="" localdata="" url="" useGroup="false" isMultiPipe="true" pipeparam="field_cd_pipe" pipecolumn="FIELD_CD" paging="false" pagingCount="500" error="" DSType="None" isPost="false">
+      <mapping>
+        <param parameter="end_dt" applyType="constant" dataType="string" />
+        <param parameter="foreign_yn" applyType="constant" dataType="string" />
+        <param parameter="field_cd_pipe" applyType="constant" dataType="string" value="P01300" />
+        <param parameter="module_cd" applyType="constant" dataType="string" value="MA" />
+        <param parameter="syscode_yn" applyType="constant" dataType="string" />
+        <param parameter="keyword" applyType="constant" dataType="string" />
+        <param parameter="base_yn" applyType="constant" dataType="string" />
+      </mapping>
+      <columns>
+        <column field="FIELD_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="디테일코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="SYSDEF_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="코드디테일코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="SYSDEF_NM" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="코드디테일명" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="FLAG_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="참조코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="END_DT" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="종료일" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+    <datasource uid="datasource-75a46672f1864e4ab35203376d92fcb3" id="pipeDataSource2" isTreeGrid="false" grid="false" aggregate="false" group="false" userGroup="false" type="dataservice" module="CM" service="CommonCodeDtlService" urlpattern="common_ci_codeDtl_list" params_type="mapping" params="" preview_type="none" preview="" localdata="" url="" useGroup="false" isMultiPipe="true" pipeparam="field_cd_pipe" pipecolumn="FIELD_CD" paging="false" pagingCount="500" error="" DSType="None" isPost="false">
+      <mapping>
+        <param parameter="end_dt" applyType="constant" dataType="string" />
+        <param parameter="foreign_yn" applyType="constant" dataType="string" />
+        <param parameter="field_cd_pipe" applyType="constant" dataType="string" value="P00155" />
+        <param parameter="module_cd" applyType="constant" dataType="string" value="HR" />
+        <param parameter="syscode_yn" applyType="constant" dataType="string" />
+        <param parameter="keyword" applyType="constant" dataType="string" />
+        <param parameter="base_yn" applyType="constant" dataType="string" />
+      </mapping>
+      <columns>
+        <column field="FIELD_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="디테일코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="SYSDEF_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="코드디테일코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="SYSDEF_NM" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="코드디테일명" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="FLAG_CD" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="참조코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="END_DT" unionfield="" dataType="string" editable="false" useType="true" isID="false" isChildren="false" description="종료일" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+  </dataSources>
+  <pageMarkDown><![CDATA[]]></pageMarkDown>
+  <pageCssStyle><![CDATA[]]></pageCssStyle>
+  <stylesheets />
+  <javascripts />
+  <settings />
+  <datas />
+</page>

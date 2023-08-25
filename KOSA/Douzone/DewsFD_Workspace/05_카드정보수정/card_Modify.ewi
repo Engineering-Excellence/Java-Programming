@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <layout>
+    <selectedServer>https://dev.comet.duzon.net</selectedServer>
+    <projectName>05_카드정보수정</projectName>
+    <menuTitle>카드정보수정</menuTitle>
+    <menuID>card_Modify</menuID>
+  </layout>
+  <dataSources>
+    <datasource uid="datasource-239a517f11b8458e92d7f8c7a5c5d6b8" id="dataSource1" isTreeGrid="false" grid="false" aggregate="false" group="false" userGroup="false" type="dataservice" module="PS" service="ProjectSystemWbsService" urlpattern="emp_search_list" params_type="mapping" params="" preview_type="none" preview="" localdata="" url="" useGroup="false" isMultiPipe="false" pipeparam="" pipecolumn="" paging="false" pagingCount="500" error="" DSType="None" isPost="false">
+      <mapping>
+        <param parameter="dept_cd" applyType="control" dataType="_DEPT_CD" value="code" />
+      </mapping>
+      <columns>
+        <column field="DEPT_CD" unionfield="" dataType="string" editable="true" isID="false" isChildren="false" description="부서코드" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="EMP_NO" unionfield="" dataType="string" editable="true" isID="true" isChildren="false" description="사번" useAggregate="false" aggregate="" useGroup="false" />
+        <column field="KOR_NM" unionfield="" dataType="string" editable="true" isID="false" isChildren="false" description="사원명" useAggregate="false" aggregate="" useGroup="false" />
+      </columns>
+      <widgetSampleDatas />
+    </datasource>
+  </dataSources>
+</PageInfo>
