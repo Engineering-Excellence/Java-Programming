@@ -21,7 +21,5 @@ public class ScannerTest2 {
 		
 		System.out.println(name + "님은 " + age + "살 입니다.");
 		System.out.println(name + "님은 내년에 " + (age + 1) + "살 입니다.");
-		
 	}
-	
 }

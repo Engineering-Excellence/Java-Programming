@@ -113,22 +113,5 @@ public class PrintTest {
 		System.out.printf("%d + %d \n", 5, 3, 5 + 3);
 //		출력 서식의 개수보다 데이터가 적으면 예외가 발생된다.
 //		System.out.printf("%d + %d + %d = %d\n", 5, 3, 5 + 3); // 예외 발생
-		
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

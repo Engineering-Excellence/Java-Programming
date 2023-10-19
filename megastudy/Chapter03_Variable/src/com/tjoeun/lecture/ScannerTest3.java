@@ -12,7 +12,5 @@ public class ScannerTest3 {
 		System.out.print("continue?(y/n) ");
 		char confirm = scanner.nextLine().charAt(0);
 		System.out.println(confirm);
-		
 	}
-	
 }

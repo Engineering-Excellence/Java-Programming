@@ -38,18 +38,5 @@ public class ScannerTest {
 		String name = scanner.nextLine();
 		
 		System.out.println(name + "님은 " + addr + "에 삽니다.");
-		
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
