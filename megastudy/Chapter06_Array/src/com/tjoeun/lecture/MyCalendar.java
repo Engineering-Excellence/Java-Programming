@@ -24,5 +24,4 @@ public class MyCalendar {
     public static int weekDay(int year, int month, int day) {
         return totalDay(year, month, day) % 7;
     }
-
 }
