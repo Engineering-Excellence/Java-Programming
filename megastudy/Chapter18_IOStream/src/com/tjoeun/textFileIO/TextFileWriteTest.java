@@ -21,8 +21,8 @@ public class TextFileWriteTest {
 //		경로 지정시 경로와 경로, 경로와 파일을 구분하는 "\"가 에러가 발생되면 "\\"나 "/"로 변경한다.
 
 //		상대경로
-
         String filePath = "./Chapter18_IOStream/resources/out.txt";
+
         try (PrintWriter printWriter = new PrintWriter(filePath)) {
             scanner = new Scanner(System.in);
 
