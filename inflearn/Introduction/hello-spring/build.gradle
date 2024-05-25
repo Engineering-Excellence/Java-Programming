@@ -18,7 +18,11 @@ repositories {
 dependencies {
     implementation 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//    runtimeOnly 'mysql:mysql-connector-java'  // SpringBoot 2.7.8 버전 이전
+    runtimeOnly 'com.mysql:mysql-connector-j'   // SpringBoot 2.7.8 버전 이후
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compileOnly 'org.springframework.boot:spring-boot-devtools'
 }
