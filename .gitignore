@@ -167,3 +167,5 @@ StandardJava/
 
 .gitsecret/keys/random_seed
 !*.secret
+build/
+.gradle/
